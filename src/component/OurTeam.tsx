@@ -14,7 +14,7 @@ import LeNguyenQuyenTrangImg from '../assets/OUR Dedicated team/Le Nguyen Quyen 
 const colors = {
   blue: '#2A3B8F', // Màu xanh đậm cho tiêu đề và chức vụ
   orange: '#FF6B35', // Màu cam cho viền ảnh và tên
-  bg: '#FFF5F0', // Màu nền kem nhạt
+  bg: '#fff2ea', // Màu nền kem nhạt
 };
 
 // --- DỮ LIỆU THÀNH VIÊN (TEAM DATA) ---

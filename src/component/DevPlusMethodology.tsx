@@ -42,7 +42,7 @@ const colors = {
   orangeText: '#FF6B35',
   orangePrimary: '#FF6B35',
   redDot: '#ffb783', // Màu đỏ cho chấm tròn tại đỉnh
-  bg: '#FFF5F0',
+  bg: '#fff2ea',
   labelColor: '#1E3A8A',
   gridColor: '#E0E0E0',
 };
@@ -168,7 +168,7 @@ const Arrow = () => (
 
 const DevPlusMethodology: React.FC = () => {
   return (
-    <section className="w-full py-16 px-4 md:px-8 bg-[#FFF8F3] overflow-hidden">
+    <section className="w-full py-16 px-4 md:px-8 bg-[#fff2ea] overflow-hidden">
       <div className="max-w-[1400px] mx-auto">
         
         {/* --- HEADER --- */}

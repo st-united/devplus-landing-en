@@ -26,7 +26,7 @@ import SourmackDarbouyImg from '../assets/OUR EXPERT COMMUNITY/Sourmack Darbouy.
 const colors = {
   blue: '#2A3B8F',   // Màu xanh tiêu đề
   orange: '#FF6B35', // Màu cam đoạn văn
-  bg: '#FFF5F0',     // Màu nền (nếu cần dùng)
+  bg: '#fff2ea',     // Màu nền (nếu cần dùng)
 };
 
 const speakers = [
@@ -174,7 +174,7 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
 
 const SpeakerSection = () => {
   return (
-    <section className='relative w-full bg-[#fcf7f6] overflow-hidden min-h-[50rem]'>
+    <section className='relative w-full bg-[#fff2ea] overflow-hidden min-h-[50rem]'>
       {/* Background Decor */}
       <div className='hidden md:block pointer-events-none select-none absolute top-10 -left-[10rem] w-100 h-100 rounded-full bg-[#F7F2F1] border border-white shadow-[0_20px_60px_rgba(0,0,0,0.15),0_-20px_60px_rgba(0,0,0,0.05)]' />
       
@@ -195,9 +195,8 @@ const SpeakerSection = () => {
             className='text-lg md:text-xl font-medium text-center max-w-5xl mx-auto mb-[5rem] leading-relaxed' 
             style={{ color: colors.orange }}
           >
-            With diverse expertise in higher education, business, and global operations, our leaders work tirelessly to ensure that Cintana Education and our partner institutions succeed. The Cintana Education team has unparalleled experience in creating high-impact, sustainable educational institutions. With more than a million students educated across 200+ campuses in over 25 countries, we understand what it takes to build global networks that deliver quality learning at scale.
+          Dev Plus collaborates with a growing network of local and international companies to create real-world learning environments for learners. Through on-the-job training, global internship placements, and immersive school tours, these partners open their offices, projects, and teams so learners can gain practical experience, and build industry connections.
           </p>
-
           {/* GRID responsive - Giữ nguyên logic hiển thị card */}
           <div className='grid lg:grid-cols-4 gap-x-10 md:gap-x-6 gap-y-30 justify-items-center'>
             {speakers.map((sp, i) => (

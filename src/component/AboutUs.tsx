@@ -1,11 +1,15 @@
 import React from 'react';
 import logo from '../assets/Logo/10.png';
 
+// Import ảnh từ thư mục About us
+import AboutUsImg1 from '../assets/About us/R6M26117.jpg';
+import AboutUsImg2 from '../assets/About us/Copy of 10.jpg';
+
 // --- CẤU HÌNH MÀU SẮC ---
 const colors = {
   blue: '#2A3B8F',
   orange: '#FF6B35',
-  bg: '#FFF5F0', // Màu nền kem nhạt
+  bg: '#fff2ea', // Màu nền kem nhạt
   white: '#FFFFFF',
 };
 
@@ -42,12 +46,9 @@ const AboutUs: React.FC = () => {
           </div>
 
           <div className="max-w-4xl mx-auto space-y-10 mb-20">
-            <p className="text-xl md:text-2xl leading-relaxed" style={{ color: colors.orange }}>
-              Cintana Education enables universities around the world to increase their academic quality and scale to give more students the education they need and deserve.
-            </p>
+
             <p className="text-xl md:text-2xl font-medium leading-relaxed" style={{ color: colors.blue }}>
-              Cintana Education began as a bold vision—a partnership forged by leaders who believed that the power of education could reshape the future of nations and individuals alike.
-            </p>
+Dev Plus started with a simple idea: help learners #ready-to-work faster by combining real projects, industry-aligned training, and insights from experts.            </p>
           </div>
 
           {/* --- STATS SECTION --- */}
@@ -87,10 +88,9 @@ const AboutUs: React.FC = () => {
           
           {/* LEFT: IMAGE */}
           <div className="w-full h-[400px] md:h-[500px] rounded-[30px] overflow-hidden shadow-xl relative">
-             {/* Tôi dùng ảnh Unsplash nature để giả lập hình ngọn đồi/bầu trời như thiết kế */}
             <img 
-              src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80" 
-              alt="Cintana Landscape" 
+              src={AboutUsImg2} 
+              alt="About Us" 
               className="w-full h-full object-cover"
             />
           </div>
@@ -103,19 +103,8 @@ const AboutUs: React.FC = () => {
             
             <div className="space-y-6 text-base md:text-lg leading-relaxed" style={{ color: colors.blue }}>
               <p>
-                Cintana Education enables universities around the world to increase quality and scale in order to provide more students with the education they need and deserve. We provide world-class expertise and access to our own proprietary resources as well as those of Arizona State University, a top-ranked university, that shares our vision of expanding access through growth and innovation.
-              </p>
-              <p>
-                Together, we are building the Cintana Alliance, an international network of universities that will work together to meet the rising global demand for high-quality post-secondary education. This alliance brings together institutions from various regions, creating a collaborative environment that promotes innovation, resource sharing, and a commitment to academic excellence.
-              </p>
+              Founded in 2019 by a group of leading software companies in Da Nang, Dev Plus is on a mission to transform Vietnam's next-generation into #ready-to-work standard through our proven Mindset - Skillset-Toolset competence framework. We connect schools, businesses, and expert communities to help young talent elevate their competence through intensive training, personalized mentoring, innovation challenges, and real-world sandbox internships.              </p>
             </div>
-
-            <button 
-              className="mt-8 px-8 py-3 rounded-full font-bold text-white shadow-lg transition-transform hover:scale-105 hover:shadow-xl"
-              style={{ backgroundColor: colors.orange }}
-            >
-              Contact us
-            </button>
           </div>
 
         </div>
@@ -126,7 +115,7 @@ const AboutUs: React.FC = () => {
           <div className="w-full h-[400px] md:h-[500px] rounded-[30px] overflow-hidden shadow-xl relative">
              {/* Tôi dùng ảnh Unsplash nature để giả lập hình ngọn đồi/bầu trời như thiết kế */}
             <img 
-              src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80" 
+              src={AboutUsImg1} 
               alt="Cintana Landscape" 
               className="w-full h-full object-cover"
             />
@@ -140,17 +129,9 @@ const AboutUs: React.FC = () => {
             
             <div className="space-y-6 text-base md:text-lg leading-relaxed" style={{ color: colors.blue }}>
               <p>
-                Our mission is to shape the future of education by helping universities become leaders in their regions and beyond. Through customized strategies, curriculum development, faculty training, and cutting-edge technologies, we ensure that our partner institutions not only grow but excel.              </p>
-              <p>
-                We believe that when universities succeed, students, communities, and the world benefit.              </p>
+                Become Vietnam’s leading organization for workforce transformation.</p>
             </div>
 
-            <button 
-              className="mt-8 px-8 py-3 rounded-full font-bold text-white shadow-lg transition-transform hover:scale-105 hover:shadow-xl"
-              style={{ backgroundColor: colors.orange }}
-            >
-              Learn more
-            </button>
           </div>
 
         </div>

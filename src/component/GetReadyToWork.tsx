@@ -2,7 +2,7 @@ import React from 'react';
 
 const GetReadyToWork: React.FC = () => {
   return (
-    <section className='relative w-full overflow-hidden bg-#fff2ea mb-6 mt-4'>
+    <section className='relative w-full overflow-hidden bg-[#fff2ea] mb-6 mt-4'>
       {/* Background Decor (Optional - thêm chấm tròn hoặc shape mờ nếu cần) */}
       
       <div className='relative z-10 mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-12 sm:py-16 lg:py-24'>

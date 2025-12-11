@@ -109,7 +109,7 @@ const PartnersSection: React.FC = () => {
   return (
     <section
       id='partners'
-      className='relative w-full bg-[#fcf7f6] overflow-hidden'
+      className='relative w-full bg-[#fff2ea] overflow-hidden'
     >
   
 

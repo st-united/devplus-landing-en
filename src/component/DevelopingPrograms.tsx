@@ -16,7 +16,7 @@ const GetReadyToWork: React.FC = () => {
             </h2>
             {/* Description */}
             <p className='text-[#FF854D] text-base sm:text-lg leading-relaxed mb-10 max-w-2xl text-justify md:text-left'>
-We have implemented a range of industry-aligned programs that build practical skills, real experience, and stronger career readiness for local and international students.
+            We have implemented a range of industry-aligned programs that build practical skills, real experience, and stronger career readiness for local and international students.
             </p>
             </div>
 

@@ -10,7 +10,7 @@ import {
 const colors = {
   blue: '#1C2B5F',    
   orange: '#FF6B35',  
-  bg: '#FFF5F0',       
+  bg: '#fff2ea',       
   mapFill: '#FFD0B8',  
   mapHover: '#FFAB91', 
   mapStroke: '#FFFFFF' 

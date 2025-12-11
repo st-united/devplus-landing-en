@@ -28,7 +28,7 @@ const colors = {
   blue: "#2A3B8F",
   orangePrimary: "#FF6B35",
   orangeSecondary: "#FF8A4C",
-  bg: "#FFF5F0",
+  bg: "#fff2ea",
 };
 
 // --- ICONS ---

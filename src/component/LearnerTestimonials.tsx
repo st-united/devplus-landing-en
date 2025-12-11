@@ -1,154 +1,153 @@
-import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight, Quote } from 'lucide-react'; // Cần cài: npm install lucide-react
+import React from 'react';
+import { Quote } from 'lucide-react';
 
-// --- MÀU SẮC CHỦ ĐẠO (Đồng bộ với component trước) ---
+// Import ảnh từ thư mục Learner testimonials
+import TestimonialImg1 from '../assets/Learner testimonials/1.jpg';
+import TestimonialImg2 from '../assets/Learner testimonials/2.jpg';
+import TestimonialImg3 from '../assets/Learner testimonials/3.jpg';
+import TestimonialImg4 from '../assets/Learner testimonials/4.jpg';
+import TestimonialImg5 from '../assets/Learner testimonials/5.jpg';
+
+// --- MÀU SẮC CHỦ ĐẠO ---
 const colors = {
   blue: '#2A3B8F',
   orange: '#FF6B35',
-  bg: '#FFF5F0',
+  bg: '#fff2ea',
   white: '#FFFFFF',
 };
 
-// --- DỮ LIỆU TESTIMONIALS ---
-// Bạn có thể thêm nhiều sinh viên vào đây, slider sẽ tự động hoạt động
-const TESTIMONIALS = [
-  {
-    id: 1,
-    name: "Salvador Rodriguez",
-    university: "Universidad Autónoma de Guadalajara",
-    quote: "This full experience made us a huge family, and now I know I don’t only have a home in Mexico, but I also have a home in Vietnam, Indonesia, Costa Rica, Ecuador, Colombia, Philippines — everywhere.",
-    image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=800&q=80", // Ảnh đại diện cho hoạt động
-  },
-  {
-    id: 2,
-    name: "Nguyen Minh Anh",
-    university: "Duy Tan University",
-    quote: "Participating in the ASU-Cintana Summer Experience was a life-changing opportunity. I learned so much about sustainability and made lifelong friends from across the globe.",
-    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    id: 3,
-    name: "Maria Garcia",
-    university: "UIE - Costa Rica",
-    quote: "The innovation workshops at the ASU campus opened my eyes to new ways of problem-solving. It wasn't just about learning; it was about connecting cultures.",
-    image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80",
-  }
+// --- DỮ LIỆU CỐ ĐỊNH ---
+const SHARED_QUOTE = "I was fortunate that my confidence increased significantly. Having clear and detailed guidance helped reduce my pressure and made me realize that becoming a software engineer is not just a distant dream, but a goal that can be achieved through hard work and perseverance.";
+const FIXED_AUTHOR = "Feedback from Mentees";
+
+
+// Dữ liệu ảnh (Chỉ cần ảnh và tên để hiển thị ở slider)
+const IMAGES_LIST = [
+  { id: 1, name: "Student Activity 1", image: TestimonialImg1 },
+  { id: 2, name: "Student Activity 2", image: TestimonialImg2 },
+  { id: 3, name: "Student Activity 3", image: TestimonialImg3 },
+  { id: 4, name: "Student Activity 4", image: TestimonialImg4 },
+  { id: 5, name: "Student Activity 5", image: TestimonialImg5 },
 ];
 
 const LearnerTestimonials: React.FC = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  // Xử lý chuyển slide
-  const handlePrev = () => {
-    setCurrentIndex((prev) => (prev === 0 ? TESTIMONIALS.length - 1 : prev - 1));
-  };
-
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev === TESTIMONIALS.length - 1 ? 0 : prev + 1));
-  };
-
-  const currentItem = TESTIMONIALS[currentIndex];
-
   return (
     <section className="w-full py-16 px-4 md:px-8 overflow-hidden" style={{ backgroundColor: colors.bg }}>
+      
+      {/* Thêm style cho animation trực tiếp trong component hoặc file CSS riêng */}
+      <style>
+        {`
+          @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); } 
+          }
+          .animate-scroll {
+            animation: scroll 30s linear infinite;
+          }
+          /* Tạm dừng khi di chuột vào để xem kỹ ảnh */
+          .group:hover .animate-scroll {
+            animation-play-state: paused;
+          }
+        `}
+      </style>
+
       <div className="max-w-6xl mx-auto">
         
-        {/* --- PHẦN TRÊN: INFO & QUOTE CARD --- */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
+        {/* --- PHẦN 1: TEXT GIỚI THIỆU & QUOTE CỐ ĐỊNH --- */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
           
-          {/* LEFT COLUMN: TEXT & NAV BUTTONS */}
+          {/* CỘT TRÁI: TIÊU ĐỀ & MÔ TẢ */}
           <div className="space-y-6">
             <div>
               <p className="font-bold text-lg mb-2" style={{ color: colors.orange }}>
-                Student testimonials
+              Learner testimonials
               </p>
               <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6" style={{ color: colors.blue }}>
-                ASU - Cintana <br />
-                Summer Experience
+              PNV - Dev Plus
+              <br />
+              MentorME Experience
               </h2>
-              <p className="text-gray-600 text-lg leading-relaxed max-w-md">
-                The ASU-Cintana Summer Experience brings together undergraduate students from ASU-Cintana Alliance universities eager to explore the vital themes of sustainability and innovation on the ASU campus.
+              <p className="text-gray-600 text-lg leading-relaxed">
+              Dev Plus offered Passerelles numeriques Vietnam (PNV) students a three-month mentorship program with weekly meetings focused on guiding them through mini projects and Devkathon challenges.
               </p>
             </div>
-
-            {/* Navigation Buttons */}
-            <div className="flex gap-4 pt-4">
-              <button 
-                onClick={handlePrev}
-                className="w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-orange-600 hover:text-white"
-                style={{ backgroundColor: '#FFDAC6', color: colors.white }} // Màu nền nhạt hơn của cam
-                aria-label="Previous testimonial"
-              >
-                <ChevronLeft size={28} strokeWidth={3} />
-              </button>
-              
-              <button 
-                onClick={handleNext}
-                className="w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-                style={{ backgroundColor: colors.orange, color: colors.white }}
-                aria-label="Next testimonial"
-              >
-                <ChevronRight size={28} strokeWidth={3} />
-              </button>
-            </div>
+            {/* Đã bỏ các nút điều hướng vì ảnh tự chạy */}
           </div>
 
-          {/* RIGHT COLUMN: TESTIMONIAL CARD */}
+          {/* CỘT PHẢI: CARD QUOTE CỐ ĐỊNH */}
           <div className="relative">
              {/* Card Background */}
-            <div className="bg-white p-8 md:p-10 rounded-3xl shadow-xl relative z-10 transition-all duration-500 ease-in-out">
+            <div className="bg-white p-8 md:p-10 rounded-3xl shadow-xl relative z-10 border-t-4" style={{ borderColor: colors.orange }}>
               
               {/* Icon Quote */}
-              <div className="mb-6">
-                <Quote size={48} style={{ color: '#2C2C2C' }} fill="#2C2C2C" />
+              <div className="mb-4">
+                <Quote size={40} style={{ color: colors.blue, opacity: 0.8 }} fill={colors.blue} />
               </div>
 
-              {/* Nội dung Quote */}
-              <blockquote className="text-xl md:text-2xl font-medium text-[#2A3B8F] mb-8 leading-relaxed">
-                "{currentItem.quote}"
+              {/* Nội dung Quote Cố Định */}
+              <blockquote className="text-xl font-medium text-gray-700 mb-8 leading-relaxed italic">
+                "{SHARED_QUOTE}"
               </blockquote>
 
-              {/* Tác giả */}
-              <div>
-                <h4 className="text-xl font-bold mb-1" style={{ color: colors.orange }}>
-                  {currentItem.name}
-                </h4>
-                <p className="text-gray-500 font-medium">
-                  {currentItem.university}
-                </p>
+              {/* Tác giả Cố Định */}
+              <div className="flex items-center gap-4 border-t pt-4 border-gray-100">
+                <div>
+                  <h4 className="text-lg font-bold" style={{ color: colors.orange }}>
+                    {FIXED_AUTHOR}
+                  </h4>
+                </div>
               </div>
             </div>
             
-            {/* Decorative Element (Optional - bóng mờ phía sau nếu muốn giống style layer) */}
-            <div className="absolute top-4 -right-4 w-full h-full bg-orange-100 rounded-3xl -z-0 hidden md:block"></div>
+            {/* Decorative Element: Bóng mờ phía sau */}
+            <div className="absolute top-4 -right-4 w-full h-full rounded-3xl -z-0 hidden md:block" style={{ backgroundColor: '#FFDAC6' }}></div>
           </div>
-
         </div>
 
-        {/* --- PHẦN DƯỚI: IMAGE GALLERY / THUMBNAILS --- */}
-        {/* Hiển thị ảnh của các hoạt động tương ứng */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-            {TESTIMONIALS.map((item, index) => (
-              <div 
-                key={item.id}
-                onClick={() => setCurrentIndex(index)}
-                className={`
-                  relative overflow-hidden rounded-2xl h-48 cursor-pointer transition-all duration-300
-                  ${index === currentIndex ? 'ring-4 ring-offset-2 scale-[1.02]' : 'opacity-70 hover:opacity-100'}
-                `}
-                style={{ borderColor: colors.orange }}
-              >
-                <img 
-                  src={item.image} 
-                  alt={`Activity ${index + 1}`} 
-                  className="w-full h-full object-cover"
-                />
-                {/* Overlay tên sinh viên trên ảnh */}
-                <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
-                    <p className="text-white font-bold text-sm">{item.name}</p>
-                </div>
-              </div>
-            ))}
+        {/* --- PHẦN 2: SLIDER ẢNH CHẠY TỰ ĐỘNG (MARQUEE) --- */}
+        <div className="group relative w-full overflow-hidden mt-8">
+            {/* Lớp phủ mờ 2 bên để tạo hiệu ứng fade in/out đẹp mắt */}
+            <div className="absolute top-0 left-0 h-full w-16 bg-gradient-to-r from-[#fff2ea] to-transparent z-10"></div>
+            <div className="absolute top-0 right-0 h-full w-16 bg-gradient-to-l from-[#fff2ea] to-transparent z-10"></div>
+
+            {/* Container chứa ảnh chạy */}
+            <div className="flex w-max animate-scroll">
+                
+                {/* Render danh sách ảnh lần 1 */}
+                {IMAGES_LIST.map((item, index) => (
+                    <div 
+                        key={`list-1-${index}`} 
+                        className="w-64 md:w-80 h-48 mx-3 relative rounded-2xl overflow-hidden shadow-md flex-shrink-0 cursor-pointer hover:scale-105 transition-transform duration-300"
+                    >
+                        <img 
+                            src={item.image} 
+                            alt={item.name} 
+                            className="w-full h-full object-cover"
+                        />
+                        <div className="absolute bottom-0 left-0 w-full bg-black/50 p-3">
+                             <p className="text-white text-sm font-bold truncate">{item.name}</p>
+                        </div>
+                    </div>
+                ))}
+
+                {/* Render danh sách ảnh lần 2 (Để tạo vòng lặp vô tận liền mạch) */}
+                {IMAGES_LIST.map((item, index) => (
+                    <div 
+                        key={`list-2-${index}`} 
+                        className="w-64 md:w-80 h-48 mx-3 relative rounded-2xl overflow-hidden shadow-md flex-shrink-0 cursor-pointer hover:scale-105 transition-transform duration-300"
+                    >
+                        <img 
+                            src={item.image} 
+                            alt={item.name} 
+                            className="w-full h-full object-cover"
+                        />
+                        <div className="absolute bottom-0 left-0 w-full bg-black/50 p-3">
+                             <p className="text-white text-sm font-bold truncate">{item.name}</p>
+                        </div>
+                    </div>
+                ))}
+
+            </div>
         </div>
 
       </div>

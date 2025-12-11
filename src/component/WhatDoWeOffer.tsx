@@ -1,10 +1,18 @@
 import React from 'react';
 
+// Import ảnh từ thư mục OUR PROGRAMS
+import ChallengeDayImg from '../assets/OUR PROGRAMS/CHALLENGE DAY.jpg';
+import FastTrackImg from '../assets/OUR PROGRAMS/FAST TRACK.jpg';
+import HackathonImg from '../assets/OUR PROGRAMS/HACKATHON.JPG';
+import MentorMEImg from '../assets/OUR PROGRAMS/MENTOR ME.jpg';
+import OJTImg from '../assets/OUR PROGRAMS/OJT.jpg';
+import GlobalInternshipImg from '../assets/OUR PROGRAMS/GLOBAL INTERNSHIP.jpg';
+
 // --- CẤU HÌNH MÀU SẮC ---
 const colors = {
   blue: '#2A3B8F',
   orange: '#FF6B35',
-  bg: '#FFF5F0',
+  bg: '#fff2ea',
 };
 
 // --- DỮ LIỆU (DATA SOURCE) ---
@@ -14,7 +22,7 @@ const TIMELINE_DATA = [
     title: "Challenge Day",
     desc: "Challenge Day is a program designed to evaluate students' entrance competencies in three key areas related to their working field: Mindset, Skillset, Toolset.",
     points: [ "Online test via LMS", "Direct interview with experts", "Detailed competency evaluation", "Personalized learning path recommendations" ],
-    imgSrc: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80",
+    imgSrc: ChallengeDayImg,
     alt: "Challenge Day Interview"
   },
   {
@@ -22,16 +30,15 @@ const TIMELINE_DATA = [
     title: "Fast Track",
     desc: "Fast track is an accelerated program designed to help learners quickly gain skill job readiness in a specific field.",
     points: [ "Apply AI for BA", "Apply AI for DEV", "Apply AI for Digital Marketing" ],
-    imgSrc: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80",
+    imgSrc: FastTrackImg,
     alt: "Fast Track Graduation",
-    tag: "#ready4AI"
   },
   {
     id: 3,
     title: "Hackathon",
     desc: "A hackathon program designed for learners who want to test their skills in a fast-paced, innovative environment.",
     points: [ "Opportunities to compete for prizes", "Showcase their skills", "Collaborate with peers on real challenges", "Network with professionals across the industry" ],
-    imgSrc: "https://images.unsplash.com/photo-1504384308090-c54be3855833?auto=format&fit=crop&w=800&q=80",
+    imgSrc: HackathonImg,
     alt: "Hackathon Event"
   },
   {
@@ -39,7 +46,7 @@ const TIMELINE_DATA = [
     title: "MentorME",
     desc: "Our mentoring program is designed for learners seeking guidance in career orientation, and professional growth.",
     points: [ "Industry experts with 5+ years of experience", "1 mentor per 4–6 mentees", "Career path orientation", "Deep-dive learning topics" ],
-    imgSrc: "https://images.unsplash.com/photo-1515168816144-b220bab41aa1?auto=format&fit=crop&w=800&q=80",
+    imgSrc: MentorMEImg,
     alt: "Mentoring Session"
   },
   {
@@ -47,7 +54,7 @@ const TIMELINE_DATA = [
     title: "OJT (On-the-Job Training)",
     desc: "On-the-job training opportunities in Ho Chi Minh City and Da Nang allow students to work in real-world working environment.",
     points: [ "Join real projects at 20+ ecosystem companies", "Work directly with company mentors", "Practice Agile/Scrum model", "Improve work-based experience and employability skills" ],
-    imgSrc: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
+    imgSrc: OJTImg,
     alt: "OJT Teamwork"
   },
   {
@@ -55,7 +62,7 @@ const TIMELINE_DATA = [
     title: "Global Internship",
     desc: "Dev Plus hosts international students undertaking 1- to 6-month internships with Da Nang-based companies across various sectors.",
     points: [ "Work with international peers", "Join cross-cultural activities", "Receive guidance from global mentors", "Contribute to real global projects" ],
-    imgSrc: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80",
+    imgSrc: GlobalInternshipImg,
     alt: "Global Internship Group"
   }
 ];
@@ -76,7 +83,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ item, isEven }) => {
       
       {/* Nút tròn số thứ tự */}
       <div 
-        className="hidden md:flex absolute left-1/2 top-0 -translate-x-1/2 -translate-y-2 w-12 h-12 rounded-full items-center justify-center text-white font-bold text-xl z-10 border-4 border-[#FFF5F0]" 
+        className="hidden md:flex absolute left-1/2 top-0 -translate-x-1/2 -translate-y-2 w-12 h-12 rounded-full items-center justify-center text-white font-bold text-xl z-10 border-4 border-[#fff2ea]" 
         style={{ backgroundColor: colors.orange }}
       >
         {item.id}
@@ -140,11 +147,6 @@ const ImageContent: React.FC<{ item: typeof TIMELINE_DATA[0] }> = ({ item }) => 
       alt={item.alt} 
       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
     />
-    {item.tag && (
-      <div className="absolute inset-0 bg-black/10 flex items-center justify-center">
-         <span className="bg-white/80 px-4 py-1 rounded text-sm font-bold text-gray-800">{item.tag}</span>
-      </div>
-    )}
   </div>
 );
 
