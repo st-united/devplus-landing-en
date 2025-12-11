@@ -128,7 +128,7 @@ const options: ChartOptions<'radar'> = {
         display: true,
         font: {
           size: 12,
-          weight: "700",
+          weight: 700,
           family: "'Inter', sans-serif",
         },
         color: colors.labelColor,
