@@ -1,6 +1,4 @@
-import React from 'react';
 
-// Import tất cả ảnh từ thư mục OUR EXPERT COMMUNITY
 import BuiXuanThienImg from '../assets/OUR EXPERT COMMUNITY/Bùi Xuan Thien.png';
 import DangNgocHuyImg from '../assets/OUR EXPERT COMMUNITY/Dang Ngoc Huy.png';
 import DangThaiHaiImg from '../assets/OUR EXPERT COMMUNITY/Dang Thai Hai.png';
@@ -22,11 +20,10 @@ import QuocThaoImg from '../assets/OUR EXPERT COMMUNITY/Quoc Thao.png';
 import StephenWarrenImg from '../assets/OUR EXPERT COMMUNITY/Stephen Warren.png';
 import SourmackDarbouyImg from '../assets/OUR EXPERT COMMUNITY/Sourmack Darbouy.png';
 
-// --- CẤU HÌNH MÀU SẮC CHUẨN ---
 const colors = {
-  blue: '#2A3B8F',   // Màu xanh tiêu đề
-  orange: '#FF6B35', // Màu cam đoạn văn
-  bg: '#fff2ea',     // Màu nền (nếu cần dùng)
+  blue: '#2A3B8F',  
+  orange: '#FF6B35',
+  bg: '#fff2ea',     
 };
 
 const speakers = [
@@ -142,10 +139,8 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
 
   return (
     <div className={`relative w-[245px] ${className}`}>
-      {/* 1) BG tím bo góc: lớp dưới cùng */}
       <div className='absolute inset-0 h-[260px] bg-[#D9D8E5] rounded-tr-[120px] top-8 z-0' />
 
-      {/* 2) LỚP MASK ở trên: cắt ảnh theo bo góc, ảnh nằm TRÊN bg */}
       <div className='relative h-[300px] rounded-tr-[120px] overflow-hidden z-10'>
         <img
           src={photo}
@@ -154,14 +149,12 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
           loading='lazy'
         />
 
-        {/* overlay + tên */}
         <div className='absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/80 to-transparent' />
         <div className='absolute bottom-3 left-4 right-4 text-white font-semibold leading-tight'>
           {name}
         </div>
       </div>
 
-      {/* 3) Dải cam chức danh */}
       <div
         className='inline-block w-full h-12 mt-2 px-3 py-2 text-white text-[12px] leading-snug'
         style={{ backgroundColor: accent }}
@@ -175,14 +168,12 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
 const SpeakerSection = () => {
   return (
     <section className='relative w-full bg-[#fff2ea] overflow-hidden min-h-[50rem]'>
-      {/* Background Decor */}
       <div className='hidden md:block pointer-events-none select-none absolute top-10 -left-[10rem] w-100 h-100 rounded-full bg-[#F7F2F1] border border-white shadow-[0_20px_60px_rgba(0,0,0,0.15),0_-20px_60px_rgba(0,0,0,0.05)]' />
       
       <div className='relative px-4 sm:px-6 lg:px-16 py-8 sm:py-12'>
         <div className='max-w-6xl mx-auto'>
           
-          {/* --- SỬA LẠI PHẦN HEADER & TEXT --- */}
-          {/* 1. Tiêu đề: Màu xanh đậm (#2A3B8F), font đậm, không viết hoa toàn bộ */}
+
           <h2 
             className='text-4xl md:text-5xl font-extrabold text-center mb-6' 
             style={{ color: colors.blue }}
@@ -190,14 +181,12 @@ const SpeakerSection = () => {
             Our experts
           </h2>
 
-          {/* 2. Đoạn văn: Màu cam (#FF6B35), căn giữa, font size vừa phải */}
           <p 
             className='text-lg md:text-xl font-medium text-center max-w-5xl mx-auto mb-[5rem] leading-relaxed' 
             style={{ color: colors.orange }}
           >
           Dev Plus collaborates with a growing network of local and international companies to create real-world learning environments for learners. Through on-the-job training, global internship placements, and immersive school tours, these partners open their offices, projects, and teams so learners can gain practical experience, and build industry connections.
           </p>
-          {/* GRID responsive - Giữ nguyên logic hiển thị card */}
           <div className='grid lg:grid-cols-4 gap-x-10 md:gap-x-6 gap-y-30 justify-items-center'>
             {speakers.map((sp, i) => (
               <SpeakerCard

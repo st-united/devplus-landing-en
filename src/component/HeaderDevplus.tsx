@@ -18,7 +18,6 @@ const HeaderDevplus = ({ activeSection }: { activeSection: string }) => {
   const handleNavClick = (path: string) => {
     navigate(path);
     setMobileMenuOpen(false);
-    // Scroll to top khi chuyển trang
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -32,7 +31,6 @@ const HeaderDevplus = ({ activeSection }: { activeSection: string }) => {
           lineHeight: 'normal',
         }}
       >
-        {/* --- LOGO --- */}
         <Link to="/" className="flex-shrink-0">
           <img
             src={HorizontalLogo}
@@ -41,7 +39,6 @@ const HeaderDevplus = ({ activeSection }: { activeSection: string }) => {
           />
         </Link>
 
-        {/* --- CENTER NAVIGATION (Desktop/Tablet Only) --- */}
         <div className="hidden md:flex bg-white px-2 py-1 rounded-full items-center gap-2 lg:gap-8 xl:gap-12 shadow-sm mx-4">
           {navs.map((nav) => (
             <div
@@ -62,12 +59,7 @@ const HeaderDevplus = ({ activeSection }: { activeSection: string }) => {
           ))}
         </div>
 
-        {/* --- RIGHT ACTIONS --- */}
         <div className="flex items-center gap-3">
-          
-          {/* NÚT CONTACT US (CHỈ HIỆN TRÊN TABLET & DESKTOP) */}
-          {/* hidden: mặc định ẩn (mobile) */}
-          {/* md:block: hiện từ màn hình tablet trở lên */}
           <button
             className="
               hidden md:block
@@ -82,7 +74,6 @@ const HeaderDevplus = ({ activeSection }: { activeSection: string }) => {
             Contact Us
           </button>
 
-          {/* --- HAMBURGER MENU (CHỈ HIỆN TRÊN MOBILE) --- */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="flex md:hidden flex-col gap-1.5 p-2 justify-center items-center w-10 h-10 rounded-md hover:bg-gray-100/50"
@@ -107,7 +98,6 @@ const HeaderDevplus = ({ activeSection }: { activeSection: string }) => {
         </div>
       </Header>
 
-      {/* --- MOBILE MENU OVERLAY --- */}
       <div
         className={`
           fixed inset-x-0 top-[60px] z-40 md:hidden transition-all duration-300 ease-in-out
@@ -135,7 +125,6 @@ const HeaderDevplus = ({ activeSection }: { activeSection: string }) => {
           
           <div className="h-px bg-gray-200 my-1"></div>
           
-          {/* NÚT CONTACT US (DÀNH RIÊNG CHO MOBILE MENU) */}
           <button
             className="
               w-full px-6 py-3 
@@ -149,7 +138,6 @@ const HeaderDevplus = ({ activeSection }: { activeSection: string }) => {
           </button>
         </div>
         
-        {/* Backdrop (Vùng tối bên dưới) */}
         <div 
             className={`h-screen w-full transition-colors duration-300 ${mobileMenuOpen ? 'bg-black/20' : 'bg-transparent'}`}
             onClick={() => setMobileMenuOpen(false)}

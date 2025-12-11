@@ -1,7 +1,5 @@
-import React from "react";
 import { Row, Col } from "antd";
 
-// --- DỮ LIỆU MẪU ---
 const items = [
   {
     id: "01",
@@ -23,7 +21,6 @@ const items = [
   },
 ];
 
-// --- MÀU SẮC ---
 const colors = {
   blue: "#2A3B8F",
   orangePrimary: "#FF6B35",
@@ -31,7 +28,6 @@ const colors = {
   bg: "#fff2ea",
 };
 
-// --- ICONS ---
 const IconTool = () => (
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5a2.5 2.5 0 0 0 0 3.5"/><path d="M5.5 11.5a5.5 5.5 0 0 0 7 0"/></svg>
 );
@@ -59,9 +55,6 @@ export default function LearningModelMerged() {
       </h2>
 
       <Row gutter={[60, 40]} align="middle">
-        
-        {/* ================= LEFT CONTENT: LISTS ================= */}
-        {/* THAY ĐỔI: Tăng độ rộng cột trái từ 11 lên 12 */}
         <Col xs={24} lg={12}>
           <div className="flex flex-col gap-12">
             {items.map((item) => (
@@ -69,10 +62,8 @@ export default function LearningModelMerged() {
                 key={item.id} 
                 className="group flex gap-6 items-start cursor-pointer transition-transform duration-300 hover:-translate-y-1"
               >
-                {/* Marker Lollipop */}
                 <div className="relative flex-shrink-0 w-20 flex flex-col items-center top-1">
                   
-                  {/* 1. Vòng tròn viền bên ngoài */}
                   <div 
                     className="absolute top-0 w-20 h-20 rounded-full border-[5px] box-border transition-all duration-300 " 
                     style={{ 
@@ -81,7 +72,6 @@ export default function LearningModelMerged() {
                     }}
                   ></div>
 
-                  {/* 2. Khối tròn đặc bên trong */}
                   <div 
                     className="relative z-20 w-[54px] h-[54px] rounded-full flex items-center justify-center text-white text-2xl font-bold mt-[13px] transition-transform duration-300 group-hover:scale-110" 
                     style={{ backgroundColor: item.markerColor }}
@@ -89,14 +79,12 @@ export default function LearningModelMerged() {
                     {item.id}
                   </div>
 
-                  {/* 3. Cái que bên dưới */}
                   <div 
                     className="relative z-20 w-[12px] h-[34px] rounded-b-full -mt-1 transition-opacity duration-300 group-hover:opacity-100 opacity-90" 
                     style={{ backgroundColor: item.markerColor }}
                   ></div>
                 </div>
 
-                {/* Text */}
                 <div>
                   <h3 
                     style={{ color: colors.orangeSecondary }} 
@@ -113,20 +101,13 @@ export default function LearningModelMerged() {
           </div>
         </Col>
 
-        {/* ================= RIGHT CONTENT: DIAGRAM ================= */}
-        {/* THAY ĐỔI: Giảm độ rộng cột phải từ 13 xuống 12 */}
         <Col xs={24} lg={12}>
-          {/* Container chính: Thêm 'group' để bắt sự kiện hover cho toàn bộ khối */}
           <div className="group relative w-full max-w-[600px] aspect-square mx-auto flex items-center justify-center mt-10 lg:mt-0 cursor-pointer">
-            
-            {/* Wrapper nội dung để áp dụng hiệu ứng chung: Scale lên và đổ bóng khi hover */}
             <div className="relative w-full h-full flex items-center justify-center transition-all duration-500 ease-in-out group-hover:scale-[1.03] group-hover:drop-shadow-2xl">
 
-                {/* --- NỀN VÒNG TRÒN --- */}
                 <div style={{ borderColor: colors.orangePrimary }} className="absolute w-[90%] h-[90%] rounded-full border-[8px] opacity-90 z-0 pointer-events-none transition-all duration-500 group-hover:border-opacity-100"></div>
                 <div style={{ borderColor: colors.orangePrimary, backgroundColor: "white" }} className="absolute w-[68%] h-[68%] rounded-full border-[4px] z-10 shadow-sm pointer-events-none"></div>
 
-                {/* --- SATELLITES --- */}
                 <div style={{ backgroundColor: colors.orangePrimary }} className="absolute top-[10%] left-[10%] w-20 h-20 rounded-full flex items-center justify-center shadow-lg shadow-orange-300/50 z-30 transition-transform duration-500 group-hover:scale-110">
                 <span style={{ color: colors.blue }} className="bg-white w-16 h-16 rounded-full flex items-center justify-center text-[9px] font-extrabold">BUSINESS</span>
                 </div>
@@ -140,27 +121,18 @@ export default function LearningModelMerged() {
                 <span style={{ color: colors.blue }} className="bg-white w-16 h-16 rounded-full flex items-center justify-center text-[8px] font-extrabold text-center leading-tight px-1">EXPERT COMMUNITY</span>
                 </div>
 
-                {/* --- TEXT INNER --- */}
                 <div style={{ color: colors.blue }} className="absolute inset-0 z-20">
                     <span className="absolute top-[17%] left-1/2 -translate-x-1/2 font-bold text-[10px] sm:text-xs transition-colors duration-500 group-hover:text-[#F26539]">MENTORING</span>
                     <span className="absolute bottom-[18%] left-1/2 -translate-x-1/2 font-bold text-[10px] sm:text-xs transition-colors duration-500 group-hover:text-[#F26539]">ON-JOB-TRAINING</span>
                     <span className="absolute left-[14%] top-1/2 -translate-y-1/2 -rotate-90 origin-center font-bold text-[10px] sm:text-xs transition-colors duration-500 group-hover:text-[#F26539]">FAST TRACK</span>
                     <span className="absolute right-[14%] top-1/2 -translate-y-1/2 rotate-90 origin-center font-bold text-[10px] sm:text-xs transition-colors duration-500 group-hover:text-[#F26539]">HACKATHON</span>
                 </div>
-
-                {/* --- KIM TỰ THÁP TRUNG TÂM (ĐÃ SỬA RESPONSIVE) --- */}
-                {/* 1. Wrapper định vị và scale theo màn hình (Responsive Scale) */}
                 <div className="relative z-30 w-full h-full flex items-center justify-center pointer-events-none">
                     <div className="transform scale-[0.65] sm:scale-[0.9] md:scale-100 lg:scale-[0.85] xl:scale-100 transition-transform duration-300 origin-center pointer-events-auto">
-                        
-                        {/* 2. Container chính của tháp (Hover Effect & Layout) */}
-                        {/* h-auto + flex-shrink-0: Chống đè/nén layer */}
                         <div 
                             className="flex flex-col items-center justify-center -mt-12 pb-8 transition-transform duration-500 group-hover:scale-105" 
                             style={{ filter: "drop-shadow(0 4px 6px rgb(0 0 0 / 0.15))" }}
                         >
-                        
-                            {/* === TẦNG 1: TOOLSET === */}
                             <div className="relative w-[100px] mb-[2px] flex-shrink-0">
                                 <span 
                                     style={{ color: colors.blue }}
@@ -179,8 +151,6 @@ export default function LearningModelMerged() {
                                     <p className="text-[8px] font-medium opacity-95">Tool Knowledge</p>
                                 </div>
                             </div>
-
-                            {/* === TẦNG 2: SKILLSET === */}
                             <div className="relative w-[180px] mb-[2px] flex-shrink-0">
                                 <span 
                                     style={{ color: colors.blue }}
@@ -208,7 +178,6 @@ export default function LearningModelMerged() {
                                 </div>
                             </div>
 
-                            {/* === TẦNG 3: MINDSET === */}
                             <div className="relative w-[260px] flex-shrink-0">
                                 <span 
                                     style={{ color: colors.blue }}

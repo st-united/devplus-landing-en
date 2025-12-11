@@ -1,6 +1,4 @@
-import React from 'react';
 
-// --- CẤU HÌNH MÀU SẮC ---
 const colors = {
   blue: '#2A3B8F',
   orange: '#FF6B35',
@@ -8,7 +6,6 @@ const colors = {
   white: '#FFFFFF',
 };
 
-// --- DỮ LIỆU TIMELINE ---
 const EVOLUTION_DATA = [
   {
     year: "2019",
@@ -29,19 +26,14 @@ const CintanaEvolution: React.FC = () => {
     <section className="w-full py-16 px-4 md:px-8" style={{ backgroundColor: colors.bg }}>
       <div className="max-w-6xl mx-auto">
         
-        {/* --- HEADER --- */}
         <div className="mb-16 md:mb-24 text-center md:text-left">
           <h2 className="text-4xl md:text-5xl font-extrabold mb-4" style={{ color: colors.blue }}>
             Dev Plus Evolution
           </h2>
         </div>
 
-        {/* --- TIMELINE CONTAINER --- */}
         <div className="relative">
-          
-          {/* =========================================================================
-              ĐƯỜNG KẺ NỐI (DASHED LINE)
-             ========================================================================= */}
+
           <div 
             className="absolute border-dashed border-orange-400 z-0
               /* --- MOBILE (Dọc) --- */
@@ -57,14 +49,10 @@ const CintanaEvolution: React.FC = () => {
             "
           ></div>
 
-          {/* =========================================================================
-              GRID ITEMS
-             ========================================================================= */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 relative z-10">
             {EVOLUTION_DATA.map((item, index) => (
               <div key={index} className="flex flex-col h-full relative pl-16 md:pl-0 group">
                 
-                {/* 1. CONTENT CARD */}
                 <div className="flex-1 flex flex-col justify-end md:justify-start">
                     <div 
                       className="bg-white p-6 rounded-2xl border border-orange-400 shadow-sm mb-8 relative transition-transform duration-300 group-hover:-translate-y-2"
@@ -73,7 +61,6 @@ const CintanaEvolution: React.FC = () => {
                           {item.content}
                       </p>
 
-                      {/* --- MŨI TÊN CHỈ VÀO HÌNH TRÒN (RESPONSIVE ARROW) --- */}
                       <div 
                         className="absolute w-4 h-4 bg-white border-orange-400 rotate-45 z-20
                         
@@ -93,10 +80,8 @@ const CintanaEvolution: React.FC = () => {
                     </div>
                 </div>
 
-                {/* 2. CIRCLE & YEAR WRAPPER */}
                 <div className="flex flex-col items-start md:items-center relative">
                   
-                  {/* Circle Indicator */}
                   <div 
                     className="w-6 h-6 rounded-full border-2 border-orange-400 bg-white z-20 box-border
                       /* --- MOBILE POSITION --- */
@@ -110,7 +95,6 @@ const CintanaEvolution: React.FC = () => {
                     style={{ borderColor: colors.orange }}
                   ></div>
 
-                  {/* Year Label */}
                   <span 
                     className="text-3xl md:text-4xl font-extrabold md:mt-0 pt-16 md:pt-0 leading-tight" 
                     style={{ color: colors.blue }}

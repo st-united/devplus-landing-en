@@ -1,6 +1,4 @@
-import React from 'react';
 
-// Import logos
 import FabbiLogo from '../assets/Logo/Logo đối tác 1/Fabbi.png';
 import EnfueLogo from '../assets/Logo/Logo đối tác 1/Enfue.png';
 import CodeCompleteLogo from '../assets/Logo/Logo đối tác 1/Code complete.png';
@@ -35,7 +33,6 @@ const CompanyCard = ({ org }: { org: { name: string; image: string } }) => {
   <img
     src={org.image}
     alt={org.name}
-    // Tôi giữ nguyên phần ảnh bên trong, chỉ bỏ object-contain nếu bạn muốn ảnh to hơn
     className='h-[2.5rem] sm:h-[3rem] md:h-[3.5rem] rounded-[8px] sm:rounded-[10px] object-contain'
   />
 </div>
@@ -63,12 +60,6 @@ const TitleBlock = ({
   </div>
 );
 
-// const SectionLabel = ({ text }: { text: string }) => (
-//   <p className='mt-10 mb-6 text-md sm:text-2xl text-center text-[#fe7743] font-semibold'>
-//     {text}
-//   </p>
-// );
-
 const Card4Grid = ({ items }: { items: Logo[] }) => (
   <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8'>
     {items.map((it) => (
@@ -77,7 +68,6 @@ const Card4Grid = ({ items }: { items: Logo[] }) => (
   </div>
 );
 
-// Network Partners Data
 const NETWORK_PARTNER_2: Logo[] = [
   { name: 'Fabbi', src: FabbiLogo },
   { name: 'Enfue', src: EnfueLogo },
@@ -116,7 +106,6 @@ const PartnersSection: React.FC = () => {
       <div className='relative z-10 mx-auto max-w-6xl px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-20'>
 
 
-        {/* Block 1 */}
         <div className='mt-5 mb-10 sm:mb-16'>
           <TitleBlock
             title='Our Industry Partners'

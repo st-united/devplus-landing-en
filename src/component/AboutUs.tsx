@@ -1,19 +1,15 @@
-import React from 'react';
 import logo from '../assets/Logo/10.png';
 
-// Import ảnh từ thư mục About us
 import AboutUsImg1 from '../assets/About us/R6M26117.jpg';
 import AboutUsImg2 from '../assets/About us/Copy of 10.jpg';
 
-// --- CẤU HÌNH MÀU SẮC ---
 const colors = {
   blue: '#2A3B8F',
   orange: '#FF6B35',
-  bg: '#fff2ea', // Màu nền kem nhạt
+  bg: '#fff2ea', 
   white: '#FFFFFF',
 };
 
-// --- DỮ LIỆU THỐNG KÊ (STATS) ---
 const STATS_DATA = [
   { value: "26+", label: "Finished programs" },
   { value: "80+", label: "Completed projects" },
@@ -27,7 +23,6 @@ const AboutUs: React.FC = () => {
     <section className="w-full py-20 px-4 md:px-8" style={{ backgroundColor: colors.bg }}>
       <div className="max-w-6xl mx-auto">
         
-        {/* ================= PHẦN 1: HEADER & INTRO (CŨ) ================= */}
         <div className="max-w-5xl mx-auto text-center mb-20">
           <div className="mb-12">
             <p className="text-lg font-medium tracking-wide uppercase mb-4" style={{ color: colors.orange }}>
@@ -51,18 +46,15 @@ const AboutUs: React.FC = () => {
 Dev Plus started with a simple idea: help learners #ready-to-work faster by combining real projects, industry-aligned training, and insights from experts.            </p>
           </div>
 
-          {/* --- STATS SECTION --- */}
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-4 items-start border-t border-orange-200 pt-12 md:border-none md:pt-0">
             {STATS_DATA.map((item, index) => (
               <div key={index} className="relative flex flex-col items-center">
-                {/* Divider */}
                 {index !== STATS_DATA.length - 1 && (
                   <div 
                     className="hidden md:block absolute right-0 top-2 h-12 w-[1px]" 
                     style={{ backgroundColor: colors.orange }}
                   ></div>
                 )}
-                {/* Số liệu + Logo Image */}
                 <div className="flex items-center justify-center mb-2">
                   <span className="text-3xl md:text-4xl font-extrabold" style={{ color: colors.blue }}>
                     {item.value}
@@ -73,7 +65,6 @@ Dev Plus started with a simple idea: help learners #ready-to-work faster by comb
                     className="w-6 h-6 ml-2 object-contain" 
                   />
                 </div>
-                {/* Nhãn */}
                 <p className="text-sm md:text-base font-medium text-center px-2" style={{ color: colors.orange }}>
                   {item.label}
                 </p>
@@ -82,11 +73,9 @@ Dev Plus started with a simple idea: help learners #ready-to-work faster by comb
           </div>
         </div>
 
-        {/* ================= PHẦN 2: CHI TIẾT (MỚI THÊM) ================= */}
-        {/* Layout: Trái (Ảnh) - Phải (Text) */}
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-24 ">
           
-          {/* LEFT: IMAGE */}
           <div className="w-full h-[400px] md:h-[500px] rounded-[30px] overflow-hidden shadow-xl relative">
             <img 
               src={AboutUsImg2} 
@@ -95,7 +84,6 @@ Dev Plus started with a simple idea: help learners #ready-to-work faster by comb
             />
           </div>
 
-          {/* RIGHT: CONTENT */}
           <div className="text-left">
             <h3 className="text-3xl md:text-4xl font-extrabold mb-6" style={{ color: colors.orange }}>
               About Us
@@ -111,9 +99,7 @@ Dev Plus started with a simple idea: help learners #ready-to-work faster by comb
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-24 ">
           
-          {/* LEFT: IMAGE */}
           <div className="w-full h-[400px] md:h-[500px] rounded-[30px] overflow-hidden shadow-xl relative">
-             {/* Tôi dùng ảnh Unsplash nature để giả lập hình ngọn đồi/bầu trời như thiết kế */}
             <img 
               src={AboutUsImg1} 
               alt="Cintana Landscape" 
@@ -121,7 +107,6 @@ Dev Plus started with a simple idea: help learners #ready-to-work faster by comb
             />
           </div>
 
-          {/* RIGHT: CONTENT */}
           <div className="text-left">
             <h3 className="text-3xl md:text-4xl font-extrabold mb-6" style={{ color: colors.orange }}>
               Our Mission

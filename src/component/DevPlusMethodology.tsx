@@ -1,4 +1,4 @@
-import React from 'react';
+
 import {
   Chart as ChartJS,
   RadialLinearScale,
@@ -20,7 +20,6 @@ ChartJS.register(
   Legend
 );
 
-// --- DỮ LIỆU & CẤU HÌNH ---
 
 const labels = [
   'AI Foundation',
@@ -41,13 +40,12 @@ const colors = {
   blueTitle: '#1E3A8A',
   orangeText: '#FF6B35',
   orangePrimary: '#FF6B35',
-  redDot: '#ffb783', // Màu đỏ cho chấm tròn tại đỉnh
+  redDot: '#ffb783',
   bg: '#fff2ea',
   labelColor: '#1E3A8A',
   gridColor: '#E0E0E0',
 };
 
-// Dữ liệu biểu đồ TRÁI (Current)
 const dataBefore: ChartData<'radar'> = {
   labels,
   datasets: [
@@ -59,17 +57,15 @@ const dataBefore: ChartData<'radar'> = {
       borderWidth: 2,
       tension: 0.4,
       
-      // --- CẤU HÌNH CHẤM ĐỎ TẠI ĐỈNH ---
-      pointRadius: 4, // Kích thước chấm
-      pointBackgroundColor: colors.redDot, // Màu đỏ
-      pointBorderColor: '#fff', // Viền trắng cho chấm nổi bật
+      pointRadius: 4, 
+      pointBackgroundColor: colors.redDot, 
+      pointBorderColor: '#fff', 
       pointBorderWidth: 1,
       pointHoverRadius: 6,
     },
   ],
 };
 
-// Dữ liệu biểu đồ PHẢI (Upgraded)
 const dataAfter: ChartData<'radar'> = {
   labels,
   datasets: [
@@ -81,20 +77,18 @@ const dataAfter: ChartData<'radar'> = {
       borderWidth: 0,
       tension: 0.4,
 
-      // --- CẤU HÌNH CHẤM ĐỎ TẠI ĐỈNH ---
       pointRadius: 4,
       pointBackgroundColor: colors.redDot,
       pointBorderColor: '#fff',
       pointBorderWidth: 1,
       pointHoverRadius: 6,
     },
-    // Vòng tròn viền cam đậm ngoài cùng (Không cần chấm đỏ)
     {
       label: 'Outer Ring',
       data: Array(12).fill(10),
       borderColor: colors.orangePrimary,
       borderWidth: 5,
-      pointRadius: 0, // Ẩn chấm ở vòng ngoài trang trí
+      pointRadius: 0,
       fill: false,
       tension: 0.4,
     }
@@ -171,7 +165,6 @@ const DevPlusMethodology: React.FC = () => {
     <section className="w-full py-16 px-4 md:px-8 bg-[#fff2ea] overflow-hidden">
       <div className="max-w-[1400px] mx-auto">
         
-        {/* --- HEADER --- */}
         <div className="text-center mb-10 md:mb-16">
           <h2 className="text-3xl md:text-5xl font-extrabold mb-4 text-[#1E3A8A]">
             DevPlus Methodology
@@ -181,15 +174,12 @@ const DevPlusMethodology: React.FC = () => {
           </p>
         </div>
 
-        {/* --- CONTENT AREA --- */}
         <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-0 relative px-2 lg:px-10">
           
-          {/* 1. Left Chart (Current) */}
           <div className="w-full max-w-[500px] lg:w-[45%] aspect-square relative">
             <Radar data={dataBefore} options={options} />
           </div>
 
-          {/* 2. Middle Arrow */}
           <div className="flex flex-col items-center justify-center z-10 shrink-0 my-6 lg:my-0 lg:absolute lg:left-1/2 lg:top-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2">
             <Arrow />
             <p className="mt-3 text-[#FF6B35] font-bold text-lg tracking-wide uppercase opacity-90">
@@ -197,7 +187,6 @@ const DevPlusMethodology: React.FC = () => {
             </p>
           </div>
 
-          {/* 3. Right Chart (Upgraded) */}
           <div className="w-full max-w-[500px] lg:w-[45%] aspect-square relative">
             <Radar data={dataAfter} options={options} />
           </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import {
   ComposableMap,
   Geographies,
@@ -6,7 +6,6 @@ import {
   Marker
 } from "react-simple-maps";
 
-// --- CẤU HÌNH MÀU SẮC ---
 const colors = {
   blue: '#1C2B5F',    
   orange: '#FF6B35',  
@@ -15,9 +14,6 @@ const colors = {
   mapHover: '#FFAB91', 
   mapStroke: '#FFFFFF' 
 };
-
-// --- DỮ LIỆU TỌA ĐỘ VÀ MÃ QUỐC GIA (ISO) ---
-// iso: dùng để lấy ảnh từ https://flagcdn.com/
 const MARKERS = [
   { name: "France", iso: "fr", coordinates: [2.2137, 46.2276] },
   { name: "Vietnam", iso: "vn", coordinates: [108.2772, 14.0583] },
@@ -33,7 +29,6 @@ const GlobalInternship: React.FC = () => {
     <section className="w-full py-12 px-4" style={{ backgroundColor: colors.bg }}>
       <div className="max-w-full mx-auto">
         
-        {/* HEADER */}
         <div className="mb-12 text-center md:text-left max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-extrabold mb-4 text-[#1E3A8A]">
             Dev Plus: Global Internship Programs
@@ -43,7 +38,6 @@ const GlobalInternship: React.FC = () => {
           </p>
         </div>
 
-        {/* BẢN ĐỒ */}
         <div className="w-full flex justify-center">
           <div className="w-full max-w-[1200px]"> 
             <ComposableMap 
@@ -94,31 +88,23 @@ const GlobalInternship: React.FC = () => {
                       strokeLinejoin="round"    
                     />
 
-                    {/* 2. ĐỊNH NGHĨA VÙNG CẮT HÌNH TRÒN (CLIP PATH) */}
-                    {/* Tạo ID riêng cho mỗi marker để không bị trùng lặp */}
                     <defs>
                       <clipPath id={`clip-circle-${iso}`}>
                         <circle cx="15" cy="15" r="9" />
                       </clipPath>
                     </defs>
 
-                    {/* 3. ẢNH CỜ TỪ INTERNET */}
                     <image
-                      // Link ảnh: w80 là kích thước ảnh tải về (vừa đủ nét)
                       href={`https://flagcdn.com/w80/${iso}.png`} 
                       
-                      // Căn chỉnh vị trí ảnh vào giữa vòng tròn (15 - 9 = 6)
                       x="6" y="6" 
                       width="18" height="18"
                       
-                      // Cắt ảnh theo hình tròn đã định nghĩa ở trên
                       clipPath={`url(#clip-circle-${iso})`}
                       
-                      // Giống object-fit: cover trong CSS (giữ tỉ lệ ảnh, lấp đầy hình tròn)
                       preserveAspectRatio="xMidYMid slice"
                     />
                     
-                    {/* (Tùy chọn) Thêm viền trắng mỏng quanh cờ cho đẹp */}
                     <circle cx="15" cy="15" r="9" fill="none" stroke="white" strokeWidth="1" />
 
                   </g>

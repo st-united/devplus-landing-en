@@ -1,6 +1,4 @@
-import React from 'react';
 
-// Import tất cả ảnh từ thư mục OUR Dedicated team
 import HoangPhamImg from '../assets/OUR Dedicated team/Hoang Pham.png';
 import BuiNgocVinhImg from '../assets/OUR Dedicated team/Bùi Ngọc Vinh.png';
 import HuynhThiKimOanhImg from '../assets/OUR Dedicated team/Huynh Thi Kim Oanh.png';
@@ -10,14 +8,12 @@ import LeQuynhTrangImg from '../assets/OUR Dedicated team/Le Quynh Trang.png';
 import TranDucHuyImg from '../assets/OUR Dedicated team/Tran Duc Huy.png';
 import LeNguyenQuyenTrangImg from '../assets/OUR Dedicated team/Le Nguyen Quyen Trang 1.png';
 
-// --- CẤU HÌNH MÀU SẮC (Đồng bộ với các component trước) ---
 const colors = {
-  blue: '#2A3B8F', // Màu xanh đậm cho tiêu đề và chức vụ
-  orange: '#FF6B35', // Màu cam cho viền ảnh và tên
-  bg: '#fff2ea', // Màu nền kem nhạt
+  blue: '#2A3B8F',
+  orange: '#FF6B35', 
+  bg: '#fff2ea',
 };
 
-// --- DỮ LIỆU THÀNH VIÊN (TEAM DATA) ---
 const TEAM_MEMBERS = [
   {
     id: 1,
@@ -69,10 +65,8 @@ const TEAM_MEMBERS = [
   }
 ];
 
-// --- COMPONENT HIỂN THỊ MỘT THÀNH VIÊN ---
 const TeamMemberItem: React.FC<{ member: typeof TEAM_MEMBERS[0] }> = ({ member }) => (
   <div className="flex flex-col items-center text-center">
-    {/* Container Ảnh tròn có viền */}
     <div className="relative w-40 h-40 sm:w-48 sm:h-48 mb-4 md:mb-6">
       <div 
         className="w-full h-full rounded-full overflow-hidden border-4 shadow-sm"
@@ -86,7 +80,6 @@ const TeamMemberItem: React.FC<{ member: typeof TEAM_MEMBERS[0] }> = ({ member }
       </div>
     </div>
     
-    {/* Thông tin Tên & Chức vụ */}
     <div>
       <h3 className="font-bold text-lg sm:text-xl uppercase mb-1" style={{ color: colors.orange }}>
         {member.name}
@@ -98,20 +91,17 @@ const TeamMemberItem: React.FC<{ member: typeof TEAM_MEMBERS[0] }> = ({ member }
   </div>
 );
 
-// --- MAIN COMPONENT ---
 const OurTeam: React.FC = () => {
   return (
     <section className="w-full py-16 px-4 md:px-8" style={{ backgroundColor: colors.bg }}>
       <div className="max-w-6xl mx-auto">
         
-        {/* HEADER */}
         <div className="mb-12 md:mb-16 text-left">
           <h2 className="text-4xl md:text-5xl font-extrabold" style={{ color: colors.blue }}>
             Our Team
           </h2>
         </div>
 
-        {/* GRID THÀNH VIÊN (Responsive: Mobile 2 cột, Tablet 2 cột, Desktop 4 cột) */}
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 md:gap-y-16 justify-items-center">
           {TEAM_MEMBERS.map((member) => (
             <TeamMemberItem key={member.id} member={member} />
