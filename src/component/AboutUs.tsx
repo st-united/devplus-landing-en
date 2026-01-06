@@ -1,6 +1,4 @@
-import logo from '../assets/Logo/10.png';
 
-import AboutUsImg1 from '../assets/About us/R6M26117.jpg';
 import AboutUsImg2 from '../assets/About us/Copy of 10.jpg';
 
 const colors = {
@@ -10,13 +8,6 @@ const colors = {
   white: '#FFFFFF',
 };
 
-const STATS_DATA = [
-  { value: "26+", label: "Finished programs" },
-  { value: "80+", label: "Completed projects" },
-  { value: "120+", label: "Seminars & workshops" },
-  { value: "380+", label: "Developers graduated" },
-  { value: "5000+", label: "Students join our school tours" },
-];
 
 const AboutUs: React.FC = () => {
   return (
