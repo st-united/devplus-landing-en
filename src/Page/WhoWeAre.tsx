@@ -1,5 +1,4 @@
 import AboutUs from "../component/AboutUs";
-import CintanaEvolution from "../component/CintanaEvolution";
 import OurExperts from "../component/OurExperts";
 import OurFounder from "../component/OurFounder";
 import OurIndustryPartners from "../component/OurIndustryPartners";
@@ -9,7 +8,7 @@ const WhoWeAre = () => {
   return (
     <>
       <AboutUs />
-      <CintanaEvolution />
+      {/* <DevPlusEvolution /> */}
       <OurTeam />
       <OurFounder />
       <OurExperts />

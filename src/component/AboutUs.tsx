@@ -25,12 +25,12 @@ const AboutUs: React.FC = () => {
         
         <div className="max-w-5xl mx-auto text-center mb-20">
           <div className="mb-12">
-            <p className="text-lg font-medium tracking-wide uppercase mb-4" style={{ color: colors.orange }}>
+            <h1 className="text-3xl font-semibold tracking-wide uppercase mb-4" style={{ color: colors.orange }}>
               About Us
-            </p>
+            </h1>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-10" style={{ color: colors.blue }}>
-              Transforming Higher Education Access to Meet the World's Needs
-            </h2>
+                Closing the Gap Between Education and Employability           
+                 </h2>
             
             <button 
               className="px-8 py-3 rounded-full font-bold text-white shadow-lg transition-transform hover:scale-105 hover:shadow-xl"
@@ -40,10 +40,10 @@ const AboutUs: React.FC = () => {
             </button>
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-10 mb-20">
+          {/* <div className="max-w-4xl mx-auto space-y-10 mb-20">
 
             <p className="text-xl md:text-2xl font-medium leading-relaxed" style={{ color: colors.blue }}>
-Dev Plus started with a simple idea: help learners #ready-to-work faster by combining real projects, industry-aligned training, and insights from experts.            </p>
+            Dev Plus started with a simple idea: help learners #ready-to-work faster by combining real projects, industry-aligned training, and insights from experts.            </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-4 items-start border-t border-orange-200 pt-12 md:border-none md:pt-0">
@@ -70,7 +70,7 @@ Dev Plus started with a simple idea: help learners #ready-to-work faster by comb
                 </p>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
 
 
@@ -86,18 +86,18 @@ Dev Plus started with a simple idea: help learners #ready-to-work faster by comb
 
           <div className="text-left">
             <h3 className="text-3xl md:text-4xl font-extrabold mb-6" style={{ color: colors.orange }}>
-              About Us
+              Our Mission
             </h3>
             
             <div className="space-y-6 text-base md:text-lg leading-relaxed" style={{ color: colors.blue }}>
               <p>
-              Founded in 2019 by a group of leading software companies in Da Nang, Dev Plus is on a mission to transform Vietnam's next-generation into #ready-to-work standard through our proven Mindset - Skillset-Toolset competence framework. We connect schools, businesses, and expert communities to help young talent elevate their competence through intensive training, personalized mentoring, innovation challenges, and real-world sandbox internships.              </p>
+              Dev Plus is on a mission to transform Vietnam’s next generation into a #ready-to-work workforce. We create an ecosystem where learning is tested in real environments and validated by industry. Our vision is for Dev Plus to be recognized as a leading organization in talent development in South East Asia.</p>
             </div>
           </div>
 
         </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-24 ">
+            {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-24 ">
           
           <div className="w-full h-[400px] md:h-[500px] rounded-[30px] overflow-hidden shadow-xl relative">
             <img 
@@ -119,7 +119,7 @@ Dev Plus started with a simple idea: help learners #ready-to-work faster by comb
 
           </div>
 
-        </div>
+        </div> */}
         
 
       </div>

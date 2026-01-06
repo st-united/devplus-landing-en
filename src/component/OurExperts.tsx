@@ -167,9 +167,7 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
 
 const SpeakerSection = () => {
   return (
-    <section className='relative w-full bg-[#fff2ea] overflow-hidden min-h-[50rem]'>
-      <div className='hidden md:block pointer-events-none select-none absolute top-10 -left-[10rem] w-100 h-100 rounded-full bg-[#F7F2F1] border border-white shadow-[0_20px_60px_rgba(0,0,0,0.15),0_-20px_60px_rgba(0,0,0,0.05)]' />
-      
+    <section className='relative w-full bg-[#fff2ea] overflow-hidden min-h-[50rem]'>      
       <div className='relative px-4 sm:px-6 lg:px-16 py-8 sm:py-12'>
         <div className='max-w-6xl mx-auto'>
           

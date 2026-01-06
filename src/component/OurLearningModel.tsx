@@ -1,25 +1,5 @@
-import { Row, Col } from "antd";
 
-const items = [
-  {
-    id: "01",
-    title: "MINDSET–SKILLSET–TOOLSET TRANSFORMATION",
-    desc: "Help learners build the right attitude, strong skills, and the practical tools they need to be ready-to-work.",
-    markerColor: "#F46F44",
-  },
-  {
-    id: "02",
-    title: "HOLISTIC UPSKILLING PROGRAMS",
-    desc: "Offer a structured upskilling journey with fast track, personalized mentoring, hackathons, and real on-the-job learning experiences.",
-    markerColor: "#FA9D79",
-  },
-  {
-    id: "03",
-    title: "COLLABORATIVE ECOSYSTEM",
-    desc: "Partner with governments, universities, businesses, and expert communities to advance workforce development.",
-    markerColor: "#FCD2C2",
-  },
-];
+import { Row, Col } from "antd";
 
 const colors = {
   blue: "#2A3B8F",
@@ -53,56 +33,21 @@ export default function LearningModelMerged() {
       <h2 style={{ color: colors.blue }} className="text-center text-4xl sm:text-5xl font-extrabold mb-5 cursor-default hover:tracking-wide transition-all duration-500">
         Our Learning model
       </h2>
-
       <Row gutter={[60, 40]} align="middle">
         <Col xs={24} lg={12}>
-          <div className="flex flex-col gap-12">
-            {items.map((item) => (
-              <div 
-                key={item.id} 
-                className="group flex gap-6 items-start cursor-pointer transition-transform duration-300 hover:-translate-y-1"
-              >
-                <div className="relative flex-shrink-0 w-20 flex flex-col items-center top-1">
-                  
-                  <div 
-                    className="absolute top-0 w-20 h-20 rounded-full border-[5px] box-border transition-all duration-300 " 
-                    style={{ 
-                        borderColor: item.markerColor,
-                        clipPath: "polygon(0 0, 100% 0, 100% 100%, 60% 100%, 60% 85%, 40% 85%, 40% 100%, 0 100%)"
-                    }}
-                  ></div>
-
-                  <div 
-                    className="relative z-20 w-[54px] h-[54px] rounded-full flex items-center justify-center text-white text-2xl font-bold mt-[13px] transition-transform duration-300 group-hover:scale-110" 
-                    style={{ backgroundColor: item.markerColor }}
-                  >
-                    {item.id}
-                  </div>
-
-                  <div 
-                    className="relative z-20 w-[12px] h-[34px] rounded-b-full -mt-1 transition-opacity duration-300 group-hover:opacity-100 opacity-90" 
-                    style={{ backgroundColor: item.markerColor }}
-                  ></div>
-                </div>
-
-                <div>
-                  <h3 
-                    style={{ color: colors.orangeSecondary }} 
-                    className="text-lg font-bold tracking-wide uppercase transition-colors duration-300 group-hover:text-[#F26539]"
-                  >
-                    {item.title}
-                  </h3>
-                  <p style={{ color: colors.blue }} className="mt-2 leading-relaxed transition-opacity duration-300 group-hover:opacity-80">
-                    {item.desc}
-                  </p>
-                </div>
-              </div>
-            ))}
+          <div style={{ color: colors.orangePrimary }} className="text-base leading-relaxed ml-60">
+            <p className="mb-4">
+              To help learners understand where they are and what they need to grow, we use a simple yet powerful framework built on three interconnected layers: <strong>Mindset, Skillset, and Toolset.</strong>
+            </p>
+            <p>
+              At Dev Plus, we aim to transform learners’ mindset, skillset, and toolset through mentoring, hackathons, on-the-job training, and fast-track programs. We work closely with schools, government bodies, industry experts, and companies to deliver work-integrated learning experiences that ensures learners develop practical skills, professional readiness, and adaptability, so they truly get ready to work.
+            </p>
           </div>
         </Col>
 
         <Col xs={24} lg={12}>
           <div className="group relative w-full max-w-[600px] aspect-square mx-auto flex items-center justify-center mt-10 lg:mt-0 cursor-pointer">
+            
             <div className="relative w-full h-full flex items-center justify-center transition-all duration-500 ease-in-out group-hover:scale-[1.03] group-hover:drop-shadow-2xl">
 
                 <div style={{ borderColor: colors.orangePrimary }} className="absolute w-[90%] h-[90%] rounded-full border-[8px] opacity-90 z-0 pointer-events-none transition-all duration-500 group-hover:border-opacity-100"></div>

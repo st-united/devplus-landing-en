@@ -9,6 +9,7 @@ const navs = [
   { path: "/", label: "Home", id: "Home" },
   { path: "/whoweare", label: "Who We Are", id: "WhoWeAre" },
   { path: "/whatwedo", label: "What We Do", id: "WhatWeDo" },
+  { path: "/OurProducts", label: "Our Products", id: "OurProducts" }
 ];
 
 const HeaderDevplus = ({ activeSection }: { activeSection: string }) => {
