@@ -35,7 +35,7 @@ export default function LearningModelMerged() {
       </h2>
       <Row gutter={[60, 40]} align="middle">
         <Col xs={24} lg={12}>
-          <div style={{ color: colors.orangePrimary }} className="text-base leading-relaxed ml-60">
+          <div style={{ color: colors.orangePrimary }} className="text-base leading-relaxed">
             <p className="mb-4">
               To help learners understand where they are and what they need to grow, we use a simple yet powerful framework built on three interconnected layers: <strong>Mindset, Skillset, and Toolset.</strong>
             </p>
