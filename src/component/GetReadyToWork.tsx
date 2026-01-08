@@ -4,7 +4,7 @@ const GetReadyToWork: React.FC = () => {
   return (
     <section className='relative w-full overflow-hidden bg-[#fff2ea] mb-6 mt-4'>
       
-      <div className='relative z-10 mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-12 sm:py-16 lg:py-24'>
+      <div className='relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24'>
         <div className='grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center'>
 
           <div className='lg:col-span-7 order-2 lg:order-1 flex flex-col items-start'>

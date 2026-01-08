@@ -103,7 +103,7 @@ const PartnersSection: React.FC = () => {
     >
   
 
-      <div className='relative z-10 mx-auto max-w-6xl px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-20'>
+      <div className='relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20'>
 
 
         <div className='mt-5 mb-10 sm:mb-16'>

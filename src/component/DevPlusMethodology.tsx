@@ -162,8 +162,8 @@ const Arrow = () => (
 
 const DevPlusMethodology: React.FC = () => {
   return (
-    <section className="w-full py-16 px-4 md:px-8 bg-[#fff2ea] overflow-hidden">
-      <div className="max-w-[1400px] mx-auto">
+    <section className="w-full py-16 px-4 sm:px-6 lg:px-8 bg-[#fff2ea] overflow-hidden">
+      <div className="max-w-7xl mx-auto">
         
         <div className="text-center mb-10 md:mb-16">
           <h2 className="text-3xl md:text-5xl font-extrabold mb-4 text-[#1E3A8A]">

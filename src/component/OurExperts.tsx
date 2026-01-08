@@ -1,121 +1,65 @@
+import React from "react";
 
-import BuiXuanThienImg from '../assets/OUR EXPERT COMMUNITY/Bùi Xuan Thien.png';
-import DangNgocHuyImg from '../assets/OUR EXPERT COMMUNITY/Dang Ngoc Huy.png';
-import DangThaiHaiImg from '../assets/OUR EXPERT COMMUNITY/Dang Thai Hai.png';
-import DuongTranImg from '../assets/OUR EXPERT COMMUNITY/Duong Tran.png';
-import EmilyImg from '../assets/OUR EXPERT COMMUNITY/Emily.png';
-import HoangPhamImg from '../assets/OUR EXPERT COMMUNITY/Hoang Pham.png';
-import HoMinhThiImg from '../assets/OUR EXPERT COMMUNITY/Ho Minh Thi.png';
-import KimDaeHwanImg from '../assets/OUR EXPERT COMMUNITY/Kim Dae Hwan.png';
-import KimKwangHweeImg from '../assets/OUR EXPERT COMMUNITY/Kim Kwang Hwee.png';
-import NguyenSonTungImg from '../assets/OUR EXPERT COMMUNITY/Nguyen Son Tung.png';
-import NuNguyenImg from '../assets/OUR EXPERT COMMUNITY/Nu Nguyen.png';
-import RyanThanhNguyenImg from '../assets/OUR EXPERT COMMUNITY/Ryan Thanh Nguyen.png';
-import TaiNguyenImg from '../assets/OUR EXPERT COMMUNITY/Tai Nguyen.png';
-import TranKimVinhImg from '../assets/OUR EXPERT COMMUNITY/Tran Kim Vinh.png';
-import TranTrongMinhImg from '../assets/OUR EXPERT COMMUNITY/Tran Trong Minh.png';
-import TranXuanVuImg from '../assets/OUR EXPERT COMMUNITY/Tran Xuan Vu.png';
-import ThanhNhanImg from '../assets/OUR EXPERT COMMUNITY/Thanh Nhan.png';
-import QuocThaoImg from '../assets/OUR EXPERT COMMUNITY/Quoc Thao.png';
-import StephenWarrenImg from '../assets/OUR EXPERT COMMUNITY/Stephen Warren.png';
-import SourmackDarbouyImg from '../assets/OUR EXPERT COMMUNITY/Sourmack Darbouy.png';
+import BuiXuanThienImg from "../assets/OUR EXPERT COMMUNITY/Bùi Xuan Thien.png";
+import DangNgocHuyImg from "../assets/OUR EXPERT COMMUNITY/Dang Ngoc Huy.png";
+import DangThaiHaiImg from "../assets/OUR EXPERT COMMUNITY/Dang Thai Hai.png";
+import DuongTranImg from "../assets/OUR EXPERT COMMUNITY/Duong Tran.png";
+import EmilyImg from "../assets/OUR EXPERT COMMUNITY/Emily.png";
+import HoangPhamImg from "../assets/OUR EXPERT COMMUNITY/Hoang Pham.png";
+import HoMinhThiImg from "../assets/OUR EXPERT COMMUNITY/Ho Minh Thi.png";
+import KimDaeHwanImg from "../assets/OUR EXPERT COMMUNITY/Kim Dae Hwan.png";
+import KimKwangHweeImg from "../assets/OUR EXPERT COMMUNITY/Kim Kwang Hwee.png";
+import NguyenSonTungImg from "../assets/OUR EXPERT COMMUNITY/Nguyen Son Tung.png";
+import NuNguyenImg from "../assets/OUR EXPERT COMMUNITY/Nu Nguyen.png";
+import RyanThanhNguyenImg from "../assets/OUR EXPERT COMMUNITY/Ryan Thanh Nguyen.png";
+import TaiNguyenImg from "../assets/OUR EXPERT COMMUNITY/Tai Nguyen.png";
+import TranKimVinhImg from "../assets/OUR EXPERT COMMUNITY/Tran Kim Vinh.png";
+import TranTrongMinhImg from "../assets/OUR EXPERT COMMUNITY/Tran Trong Minh.png";
+import TranXuanVuImg from "../assets/OUR EXPERT COMMUNITY/Tran Xuan Vu.png";
+import ThanhNhanImg from "../assets/OUR EXPERT COMMUNITY/Thanh Nhan.png";
+import QuocThaoImg from "../assets/OUR EXPERT COMMUNITY/Quoc Thao.png";
+import StephenWarrenImg from "../assets/OUR EXPERT COMMUNITY/Stephen Warren.png";
+import SourmackDarbouyImg from "../assets/OUR EXPERT COMMUNITY/Sourmack Darbouy.png";
 
 const colors = {
-  blue: '#2A3B8F',  
-  orange: '#FF6B35',
-  bg: '#fff2ea',     
+  blue: "#2A3B8F",
+  orange: "#FF6B35",
+  bg: "#fff2ea",
 };
 
 const speakers = [
   {
-    name: 'Mr. Ryan Thanh Nguyen',
-    position: ['Product Owner @ NAB Bank, Founder Circle Academy'],
+    name: "Mr. Ryan Thanh Nguyen",
+    position: ["Product Owner @ NAB Bank, Founder Circle Academy"],
     image: RyanThanhNguyenImg,
-    description: 'Description of speaker',
   },
-  { name: 'Mr. Thanh Nhan', position: ['CEO Antee'], image: ThanhNhanImg },
-  { name: 'Mr. Hoang Pham', position: ['CEO Dev Plus'], image: HoangPhamImg },
+  { name: "Mr. Thanh Nhan", position: ["CEO Antee"], image: ThanhNhanImg },
+  { name: "Mr. Hoang Pham", position: ["CEO Dev Plus"], image: HoangPhamImg },
+  { name: "Emily", position: ["Founder và CEO DigiSource và ZA Office"], image: EmilyImg },
+  { name: "Mr. Quoc Thao", position: ["CEO AMIT"], image: QuocThaoImg },
   {
-    name: 'Emily',
-    position: ['Founder và CEO DigiSource và ZA Office'],
-    image: EmilyImg,
-  },
-  { name: 'Mr. Quoc Thao', position: ['CEO AMIT'], image: QuocThaoImg },
-  {
-    name: 'Kim Dae Hwan',
-    position: ['CEO of Global K-Startup Silicon Valley, CEO of Timely Kr'],
+    name: "Kim Dae Hwan",
+    position: ["CEO of Global K-Startup Silicon Valley, CEO of Timely Kr"],
     image: KimDaeHwanImg,
   },
+  { name: "Dang Thai Hai", position: ["President  Reasonary AI"], image: DangThaiHaiImg },
+  { name: "Tai Nguyen", position: ["Founder tại Naiscorp Robotics"], image: TaiNguyenImg },
   {
-    name: 'Dang Thai Hai',
-    position: ['President  Reasonary AI'],
-    image: DangThaiHaiImg,
-  },
-  {
-    name: 'Tai Nguyen',
-    position: ['Founder tại Naiscorp Robotics'],
-    image: TaiNguyenImg,
-  },
-  {
-    name: 'Duong Tran',
-    position: ['Head of Engineering Alpha Bits CTO Co-founder at SENCAR'],
+    name: "Duong Tran",
+    position: ["Head of Engineering Alpha Bits CTO Co-founder at SENCAR"],
     image: DuongTranImg,
   },
-  {
-    name: 'Nu Nguyen',
-    position: ['Business Manager at Evvo Labs'],
-    image: NuNguyenImg,
-  },
-  {
-    name: 'Mr. Stephen Warren',
-    position: ['Senior Project Manager Company X'],
-    image: StephenWarrenImg,
-  },
-  {
-    name: 'Mr. Sourmack Darbouy',
-    position: ['Sales Director, APAC at Atility & Abeeway'],
-    image: SourmackDarbouyImg,
-  },
-  {
-    name: 'Kim Kwang Hwee',
-    position: ['General Director of SPHERE AX Vietnam'],
-    image: KimKwangHweeImg,
-  },
-  {
-    name: 'Dang Ngoc Huy',
-    position: ['Marketing Manager - VR360'],
-    image: DangNgocHuyImg,
-  },
-  {
-    name: 'Tran Xuan Vu',
-    position: ['Head of Business Development at Enosta'],
-    image: TranXuanVuImg,
-  },
-  {
-    name: 'Tran Trong Minh',
-    position: ['CEO IA Lab'],
-    image: TranTrongMinhImg,
-  },
-  {
-    name: 'Nguyen Son Tung',
-    position: ['CEO - DX TECH JSC - AI Service Company'],
-    image: NguyenSonTungImg,
-  },
-  {
-    name: 'Ho Minh Thi',
-    position: ['CEO EM&AI'],
-    image: HoMinhThiImg,
-  },
-  {
-    name: 'Tran Kim Vinh',
-    position: ['Tech Operation & Delivery Management Trainer & Consultant'],
-    image: TranKimVinhImg,
-  },
-  {
-    name: 'Bui Xuan Thien',
-    position: ['Full Stack Developer ST United'],
-    image: BuiXuanThienImg,
-  },
+  { name: "Nu Nguyen", position: ["Business Manager at Evvo Labs"], image: NuNguyenImg },
+  { name: "Mr. Stephen Warren", position: ["Senior Project Manager Company X"], image: StephenWarrenImg },
+  { name: "Mr. Sourmack Darbouy", position: ["Sales Director, APAC at Atility & Abeeway"], image: SourmackDarbouyImg },
+  { name: "Kim Kwang Hwee", position: ["General Director of SPHERE AX Vietnam"], image: KimKwangHweeImg },
+  { name: "Dang Ngoc Huy", position: ["Marketing Manager - VR360"], image: DangNgocHuyImg },
+  { name: "Tran Xuan Vu", position: ["Head of Business Development at Enosta"], image: TranXuanVuImg },
+  { name: "Tran Trong Minh", position: ["CEO IA Lab"], image: TranTrongMinhImg },
+  { name: "Nguyen Son Tung", position: ["CEO - DX TECH JSC - AI Service Company"], image: NguyenSonTungImg },
+  { name: "Ho Minh Thi", position: ["CEO EM&AI"], image: HoMinhThiImg },
+  { name: "Tran Kim Vinh", position: ["Tech Operation & Delivery Management Trainer & Consultant"], image: TranKimVinhImg },
+  { name: "Bui Xuan Thien", position: ["Full Stack Developer ST United"], image: BuiXuanThienImg },
 ];
 
 type SpeakerCardProps = {
@@ -132,34 +76,37 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
   name,
   roleLine1,
   roleLine2,
-  accent = '#FF7A45',
-  className = '',
+  accent = "#FF7A45",
+  className = "",
 }) => {
-  const roleText = [roleLine1, roleLine2].filter(Boolean).join(', ');
+  const roleText = [roleLine1, roleLine2].filter(Boolean).join(", ");
 
   return (
-    <div className={`relative w-[245px] ${className}`}>
-      <div className='absolute inset-0 h-[260px] bg-[#D9D8E5] rounded-tr-[120px] top-8 z-0' />
+    <div className={`relative w-full max-w-[245px] ${className}`}>
+      {/* background shape */}
+      <div className="absolute inset-0 h-[260px] bg-[#D9D8E5] rounded-tr-[120px] top-8 z-0" />
 
-      <div className='relative h-[300px] rounded-tr-[120px] overflow-hidden z-10'>
+      {/* image */}
+      <div className="relative h-[300px] rounded-tr-[120px] overflow-hidden z-10">
         <img
           src={photo}
           alt={name}
-          className='absolute inset-0 w-full h-full object-cover'
-          loading='lazy'
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
         />
 
-        <div className='absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/80 to-transparent' />
-        <div className='absolute bottom-3 left-4 right-4 text-white font-semibold leading-tight'>
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/80 to-transparent" />
+        <div className="absolute bottom-3 left-4 right-4 text-white font-semibold leading-tight text-sm sm:text-base">
           {name}
         </div>
       </div>
 
+      {/* role */}
       <div
-        className='inline-block w-full h-12 mt-2 px-3 py-2 text-white text-[12px] leading-snug'
+        className="inline-block w-full mt-2 px-3 py-2 text-white text-[12px] leading-snug"
         style={{ backgroundColor: accent }}
       >
-        {roleText}
+        <div className="min-h-[44px]">{roleText}</div>
       </div>
     </div>
   );
@@ -167,25 +114,37 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({
 
 const SpeakerSection = () => {
   return (
-    <section className='relative w-full bg-[#fff2ea] overflow-hidden min-h-[50rem]'>      
-      <div className='relative px-4 sm:px-6 lg:px-16 py-8 sm:py-12'>
-        <div className='max-w-6xl mx-auto'>
-          
-
-          <h2 
-            className='text-4xl md:text-5xl font-extrabold text-center mb-6' 
+    <section className="relative w-full overflow-hidden" style={{ backgroundColor: colors.bg }}>
+      <div className="relative px-4 sm:px-6 lg:px-10 xl:px-16 py-10 sm:py-12 lg:py-16">
+        <div className="max-w-7xl mx-auto">
+          <h2
+            className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center mb-5"
             style={{ color: colors.blue }}
           >
             Our experts
           </h2>
 
-          <p 
-            className='text-lg md:text-xl font-medium text-center max-w-5xl mx-auto mb-[5rem] leading-relaxed' 
+          <p
+            className="text-base sm:text-lg md:text-xl font-medium text-center max-w-5xl mx-auto mb-12 md:mb-16 leading-relaxed"
             style={{ color: colors.orange }}
           >
-          Dev Plus collaborates with a growing network of local and international companies to create real-world learning environments for learners. Through on-the-job training, global internship placements, and immersive school tours, these partners open their offices, projects, and teams so learners can gain practical experience, and build industry connections.
+            Dev Plus collaborates with a growing network of local and international companies to create real-world learning environments for learners. Through on-the-job training,
+            global internship placements, and immersive school tours, these partners open their offices, projects, and teams so learners can gain practical experience, and build
+            industry connections.
           </p>
-          <div className='grid lg:grid-cols-4 gap-x-10 md:gap-x-6 gap-y-30 justify-items-center'>
+
+          <div
+            className="
+              grid
+              grid-cols-1
+              sm:grid-cols-2
+              lg:grid-cols-3
+              xl:grid-cols-4
+              gap-x-8 md:gap-x-10
+              gap-y-16 md:gap-y-20
+              justify-items-center
+            "
+          >
             {speakers.map((sp, i) => (
               <SpeakerCard
                 key={i}

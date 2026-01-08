@@ -9,8 +9,8 @@ const colors = {
 
 const OurFounder: React.FC = () => {
   return (
-    <section className="w-full py-16 px-4 md:px-8" style={{ backgroundColor: colors.bg }}>
-      <div className="max-w-6xl mx-auto">
+    <section className="w-full py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: colors.bg }}>
+      <div className="max-w-7xl mx-auto">
         
         <div className="text-center mb-16 md:mb-20">
           <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight" style={{ color: colors.blue }}>

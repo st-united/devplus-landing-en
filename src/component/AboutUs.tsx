@@ -1,6 +1,5 @@
 
-import AboutUsImg2 from '../assets/About us/Copy of 10.jpg';
-
+import bk7 from '../assets/About us/bk7.jpg';
 const colors = {
   blue: '#2A3B8F',
   orange: '#FF6B35',
@@ -11,8 +10,8 @@ const colors = {
 
 const AboutUs: React.FC = () => {
   return (
-    <section className="w-full py-20 px-4 md:px-8" style={{ backgroundColor: colors.bg }}>
-      <div className="max-w-6xl mx-auto">
+    <section className="w-full py-20 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: colors.bg }}>
+      <div className="max-w-7xl mx-auto">
         
         <div className="max-w-5xl mx-auto text-center mb-20">
           <div className="mb-12">
@@ -69,7 +68,7 @@ const AboutUs: React.FC = () => {
           
           <div className="w-full h-[400px] md:h-[500px] rounded-[30px] overflow-hidden shadow-xl relative">
             <img 
-              src={AboutUsImg2} 
+              src={bk7} 
               alt="About Us" 
               className="w-full h-full object-cover"
             />

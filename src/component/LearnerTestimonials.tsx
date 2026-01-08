@@ -13,8 +13,8 @@ const colors = {
   white: '#FFFFFF',
 };
 
-const SHARED_QUOTE = "I was fortunate that my confidence increased significantly. Having clear and detailed guidance helped reduce my pressure and made me realize that becoming a software engineer is not just a distant dream, but a goal that can be achieved through hard work and perseverance.";
-const FIXED_AUTHOR = "Feedback from Mentees";
+const SHARED_QUOTE = "Through regular mentor meetings and practical workshops, I gained clearer career direction, stronger confidence, and better time management skills. The program helped me rethink my mindset, set realistic goals, and build a personal development plan. I also learned the value of continuous learning and professional networking. ";
+const FIXED_AUTHOR = "Thuy Ngan_PNV student";
 
 
 const IMAGES_LIST = [
@@ -27,7 +27,7 @@ const IMAGES_LIST = [
 
 const LearnerTestimonials: React.FC = () => {
   return (
-    <section className="w-full py-16 px-4 md:px-8 overflow-hidden" style={{ backgroundColor: colors.bg }}>
+    <section className="w-full py-16 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ backgroundColor: colors.bg }}>
       
       <style>
         {`
@@ -38,7 +38,6 @@ const LearnerTestimonials: React.FC = () => {
           .animate-scroll {
             animation: scroll 30s linear infinite;
           }
-          /* Tạm dừng khi di chuột vào để xem kỹ ảnh */
           .group:hover .animate-scroll {
             animation-play-state: paused;
           }
@@ -59,7 +58,7 @@ const LearnerTestimonials: React.FC = () => {
               <br />
               MentorME Experience
               </h2>
-              <p className="text-gray-600 text-lg leading-relaxed">
+              <p className="text-orange-500 text-lg leading-relaxed">
               Dev Plus offered Passerelles numeriques Vietnam (PNV) students a three-month mentorship program with weekly meetings focused on guiding them through mini projects and Devkathon challenges.
               </p>
             </div>
@@ -72,7 +71,7 @@ const LearnerTestimonials: React.FC = () => {
                 <Quote size={40} style={{ color: colors.blue, opacity: 0.8 }} fill={colors.blue} />
               </div>
 
-              <blockquote className="text-xl font-medium text-gray-700 mb-8 leading-relaxed italic">
+              <blockquote className="text-xl font-medium text-[#40539d] mb-8 leading-relaxed italic">
                 "{SHARED_QUOTE}"
               </blockquote>
 

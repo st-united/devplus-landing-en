@@ -121,15 +121,15 @@ const GEO_URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json"
 
 const GlobalInternship: React.FC = () => {
   return (
-    <section className="w-full py-16 px-4" style={{ backgroundColor: colors.bg }}>
-      <div className="max-w-6xl mx-auto">
+    <section className="w-full py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: colors.bg }}>
+      <div className="max-w-7xl mx-auto">
         
         {/* --- HEADER --- */}
         <div className="mb-12 text-center md:text-left">
-          <h2 className="text-3xl md:text-5xl font-extrabold mb-4" style={{ color: colors.blue }}>
+          <h2 className="text-3xl md:text-5xl font-extrabold mb-4" style={{ color: "#243A8F" }}>
             Dev Plus: Global Internship Programs
           </h2>
-          <p className="text-base sm:text-lg leading-relaxed mb-10 max-w-2xl text-justify md:text-left" style={{ color: '#FF854D' }}>
+          <p className="text-base sm:text-lg leading-relaxed mb-10 max-w-6xl text-justify md:text-left" style={{ color: '#FF854D' }}>
             Based in Da Nang, a fast-growing innovation hub, we partner with global universities to help international students gain real exposure to Vietnam’s industry landscape while building professional skills, industrial insights, and cultural awareness in a supportive and safe environment.
           </p>
         </div>

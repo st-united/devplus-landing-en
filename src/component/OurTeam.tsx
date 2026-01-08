@@ -93,8 +93,8 @@ const TeamMemberItem: React.FC<{ member: typeof TEAM_MEMBERS[0] }> = ({ member }
 
 const OurTeam: React.FC = () => {
   return (
-    <section className="w-full py-16 px-4 md:px-8" style={{ backgroundColor: colors.bg }}>
-      <div className="max-w-6xl mx-auto">
+    <section className="w-full py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: colors.bg }}>
+      <div className="max-w-7xl mx-auto">
         
         <div className="mb-12 md:mb-16 text-left">
           <h2 className="text-4xl md:text-5xl font-extrabold" style={{ color: colors.blue }}>
