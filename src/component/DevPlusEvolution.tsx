@@ -1,5 +1,3 @@
-import React from 'react';
-
 // --- CẤU HÌNH MÀU SẮC ---
 const colors = {
   blue: '#2A3B8F',
