@@ -1,4 +1,4 @@
-import CollaborationImage from "../assets/Companies/bk7.jpg";
+import CollaborationImage from "../assets/companies/bk7.jpg";
 
 type CollaborationItem = {
   title: string;
