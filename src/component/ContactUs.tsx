@@ -90,7 +90,6 @@ const ContactUs = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Xử lý gửi form (backend / API tùy dự án)
   };
 
   return (
@@ -100,7 +99,6 @@ const ContactUs = () => {
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
-          {/* LEFT COLUMN - Contact info */}
           <div className="lg:col-span-5 flex flex-col gap-8">
             <div className="shrink-0">
               <img
