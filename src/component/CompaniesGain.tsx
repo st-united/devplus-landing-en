@@ -73,6 +73,9 @@ const CardBody = ({ card }: { card: ProgramCard }) => {
 };
 
 const UniversitiesPrograms = () => {
+  const images = [ST1, ST2, ST3];
+  const marqueeItems = [...images, ...images]; // nhân đôi để loop mượt
+
   return (
     <section className="bg-[#FFF3EA] py-14 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -102,31 +105,21 @@ const UniversitiesPrograms = () => {
 
         {/* ===== TESTIMONIAL QUOTE ===== */}
         <div className="mt-16 md:mt-20">
-          <p
-            className="
-              text-[#243A8F]
-              text-xl md:text-2xl lg:text-3xl
-              font-extrabold
-              text-center
-              leading-relaxed
-              max-w-4xl
-              mx-auto
-            "
-          >
-            Dev Plus collaborated with us on a sandbox program where students
+          <p className="text-[#243A8F] text-xl md:text-2xl lg:text-3xl font-extrabold text-center leading-relaxed max-w-4xl mx-auto">
+            "Dev Plus collaborated with us on a sandbox program where students
             worked on real tasks with our team. We could then confidently select
-            the best performers to continue working with us.
+            the best performers to continue working with us."
           </p>
         </div>
 
-        {/* ===== PARTNER TESTIMONIAL (NEW) ===== */}
+        {/* ===== PARTNER TESTIMONIAL ===== */}
         <div className="mt-16 md:mt-24">
           <div className="flex flex-col items-center text-center mb-10">
-            <div className="w-50 h-50 rounded-full bg-white flex items-center justify-center shadow-sm mb-6">
+            <div className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-white flex items-center justify-center shadow-sm mb-6">
               <img
                 src={STLogo}
                 alt="ST Software"
-                className="w-35 h-35 object-contain"
+                className="w-16 h-16 md:w-20 md:h-20 object-contain"
                 loading="lazy"
               />
             </div>
@@ -140,21 +133,40 @@ const UniversitiesPrograms = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[ST1, ST2, ST3].map((img, idx) => (
-              <div
-                key={idx}
-                className="rounded-2xl overflow-hidden shadow-sm bg-white"
-              >
-                <img
-                  src={img}
-                  alt={`ST Software activity ${idx + 1}`}
-                  className="w-full h-64 md:h-72 object-cover transition-transform duration-300 hover:scale-105"
-                  loading="lazy"
-                />
-              </div>
-            ))}
+          {/* ===== MARQUEE ===== */}
+          <div className="relative w-full overflow-hidden">
+            {/* fade 2 bên */}
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#FFF3EA] to-transparent z-10" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#FFF3EA] to-transparent z-10" />
+
+            <div className="flex gap-8 marquee hover:[animation-play-state:paused]">
+              {marqueeItems.map((img, idx) => (
+                <div
+                  key={idx}
+                  className="min-w-[280px] md:min-w-[340px] rounded-2xl overflow-hidden shadow-sm bg-white"
+                >
+                  <img
+                    src={img}
+                    alt={`ST Software activity ${idx + 1}`}
+                    className="w-full h-64 md:h-72 object-cover transition-transform duration-300 hover:scale-105"
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
+
+          {/* CSS inline (khỏi phải sửa globals.css) */}
+          <style>{`
+            @keyframes marquee {
+              0% { transform: translateX(0); }
+              100% { transform: translateX(-50%); }
+            }
+            .marquee {
+              width: max-content;
+              animation: marquee 18s linear infinite;
+            }
+          `}</style>
         </div>
       </div>
     </section>

@@ -1,7 +1,6 @@
 
 import HoangPhamImg from '../assets/OUR Dedicated team/Hoang Pham.png';
 import BuiNgocVinhImg from '../assets/OUR Dedicated team/Bùi Ngọc Vinh.png';
-import HuynhThiKimOanhImg from '../assets/OUR Dedicated team/Huynh Thi Kim Oanh.png';
 import NguyenKienTrungImg from '../assets/OUR Dedicated team/Nguyen Kien Trung.png';
 import VuThiThuHuongImg from '../assets/OUR Dedicated team/Vu Thi Thu Huong.png';
 import LeQuynhTrangImg from '../assets/OUR Dedicated team/Le Quynh Trang.png';
@@ -28,12 +27,6 @@ const TEAM_MEMBERS = [
     imgSrc: BuiNgocVinhImg
   },
   {
-    id: 3,
-    name: "OANH HUYNH",
-    role: "Head of Community",
-    imgSrc: HuynhThiKimOanhImg
-  },
-  {
     id: 4,
     name: "NGUYEN KIEN TRUNG",
     role: "DevPlus HCM Lead",
@@ -42,7 +35,7 @@ const TEAM_MEMBERS = [
   {
     id: 5,
     name: "VU THI THU HUONG",
-    role: "Business Development",
+    role: "Partnership Manager",
     imgSrc: VuThiThuHuongImg
   },
   {

@@ -66,13 +66,24 @@ const AboutUs: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-24 ">
           
-          <div className="w-full h-[400px] md:h-[500px] rounded-[30px] overflow-hidden shadow-xl relative">
-            <img 
-              src={bk7} 
-              alt="About Us" 
-              className="w-full h-full object-cover"
+          <div className="w-full h-[400px] md:h-[500px] rounded-[30px] relative flex justify-center">
+            <div className="w-full h-[400px] md:h-[500px] rounded-[30px] relative flex justify-center">
+          <div className="w-full h-[400px] md:h-[500px] rounded-[30px] relative flex justify-center">
+          <div className="relative w-full h-full">
+            <div className="absolute top-4 -right-4 w-full h-full bg-[#6f6c6c] rounded-[30px] -z-10 opacity-30"></div>
+
+            <img
+              src={bk7}
+              alt="About Us"
+              className="w-full h-full object-cover rounded-[30px] shadow-xl transform hover:scale-[1.02] transition-transform duration-500"
             />
           </div>
+        </div>
+
+        </div>
+
+          </div>
+
 
           <div className="text-left">
             <h3 className="text-3xl md:text-4xl font-extrabold mb-6" style={{ color: colors.orange }}>

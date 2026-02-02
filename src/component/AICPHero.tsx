@@ -24,7 +24,7 @@ const UniversitiesHero = () => {
         </div>
 
         {/* RIGHT IMAGE */}
-        <div className="flex justify-center lg:justify-end">
+        <div className="flex justify-center lg:justify-end mt-22">
           <div className="rounded-2xl overflow-hidden shadow-lg max-w-md xl:max-w-lvh">
             <img
               src={HeroImage}

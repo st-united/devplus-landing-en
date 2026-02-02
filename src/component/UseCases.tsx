@@ -108,9 +108,30 @@ const UseCases = () => {
         </h2>
 
         <div className="mt-8 sm:mt-10 space-y-12 sm:space-y-14 md:space-y-20">
-          {sections.map((sec) => {
-            const content = (
-              <div className="order-2 lg:order-none">
+          {sections.map((sec) => (
+            <div
+              key={sec.key}
+              className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-14"
+            >
+              {/* ✅ IMAGE: luôn nằm giữa theo chiều dọc so với cases */}
+              <div
+                className={`
+                  ${sec.reverse ? "lg:order-2" : "lg:order-1"}
+                  flex justify-center lg:self-center
+                `}
+              >
+                <div className="rounded-3xl overflow-hidden shadow-sm bg-white w-full max-w-xl">
+                  <img
+                    src={sec.image}
+                    alt={sec.imageAlt}
+                    className="w-full aspect-[16/10] sm:aspect-[16/9] object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+
+              {/* ✅ CONTENT */}
+              <div className={sec.reverse ? "lg:order-1" : "lg:order-2"}>
                 <h3 className="text-[#243A8F] font-extrabold text-lg md:text-xl">
                   {sec.heading}
                 </h3>
@@ -131,37 +152,8 @@ const UseCases = () => {
                   ))}
                 </div>
               </div>
-            );
-
-            const image = (
-              <div className="order-1 lg:order-none flex justify-center lg:justify-start">
-                <div className="rounded-3xl overflow-hidden shadow-sm bg-white w-full max-w-xl">
-                  <img
-                    src={sec.image}
-                    alt={sec.imageAlt}
-                    className="w-full aspect-[16/10] sm:aspect-[16/9] object-cover"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            );
-
-            return (
-              <div
-                key={sec.key}
-                className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-14 items-start"
-              >
-                {/* Mobile: luôn image -> content
-                    Desktop: reverse theo sec.reverse */}
-                <div className={sec.reverse ? "lg:order-2" : "lg:order-1"}>
-                  {image}
-                </div>
-                <div className={sec.reverse ? "lg:order-1" : "lg:order-2"}>
-                  {content}
-                </div>
-              </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </div>
     </section>

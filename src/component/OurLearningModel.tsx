@@ -51,18 +51,18 @@ export default function LearningModelMerged() {
   return (
     <div
       style={{ backgroundColor: colors.bg }}
-      className="w-full py-14 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8"
+      className="w-full py-16 px-6 max-w-7xl mx-auto"
     >
       <h2
         style={{ color: colors.blue }}
-        className="text-center text-3xl sm:text-4xl md:text-5xl font-extrabold mb-5 cursor-default hover:tracking-wide transition-all duration-500"
+        className="text-center text-4xl font-extrabold mb-8 cursor-default"
       >
         Our Learning model
       </h2>
 
-      <Row gutter={[36, 32]} align="middle">
+      <Row gutter={[48, 32]} align="middle">
         <Col xs={24} lg={12}>
-          <div style={{ color: colors.orangePrimary }} className="text-sm sm:text-base leading-relaxed ml-25">
+          <div style={{ color: colors.orangePrimary }} className="text-base leading-relaxed max-w-[520px]">
             <p className="mb-4">
               To help learners understand where they are and what they need to grow, we use a simple yet powerful framework built on three interconnected layers:{" "}
               <strong>Mindset, Skillset, and Toolset.</strong>
@@ -76,8 +76,7 @@ export default function LearningModelMerged() {
         </Col>
 
         <Col xs={24} lg={12}>
-          {/* ✅ Responsive container: nhỏ theo màn hình */}
-          <div className="group relative w-full max-w-[320px] sm:max-w-[420px] md:max-w-[520px] lg:max-w-[600px] aspect-square mx-auto flex items-center justify-center mt-10 lg:mt-0 cursor-pointer">
+          <div className="group relative w-full max-w-[480px] aspect-square mx-auto flex items-center justify-center mt-10 lg:mt-0 cursor-pointer">
             <div className="relative w-full h-full flex items-center justify-center transition-all duration-500 ease-in-out group-hover:scale-[1.03] group-hover:drop-shadow-2xl">
               <div
                 style={{ borderColor: colors.orangePrimary }}
@@ -90,72 +89,60 @@ export default function LearningModelMerged() {
 
               <div
                 style={{ backgroundColor: colors.orangePrimary }}
-                className="absolute top-[10%] left-[10%] w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center shadow-lg shadow-orange-300/50 z-30 transition-transform duration-500 group-hover:scale-110"
+                className="absolute top-[10%] left-[10%] w-[18%] aspect-square rounded-full flex items-center justify-center shadow-lg shadow-orange-300/50 z-30 transition-transform duration-500 group-hover:scale-110 min-w-[56px] min-h-[56px]"
               >
-                <span style={{ color: colors.blue }} className="bg-white w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center text-[8px] sm:text-[9px] font-extrabold">
+                <span style={{ color: colors.blue }} className="bg-white w-[70%] aspect-square rounded-full flex items-center justify-center text-[8px] font-extrabold leading-tight">
                   BUSINESS
                 </span>
               </div>
 
               <div
                 style={{ backgroundColor: colors.orangePrimary }}
-                className="absolute top-[10%] right-[10%] w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center shadow-lg shadow-orange-300/50 z-30 transition-transform duration-500 group-hover:scale-110"
+                className="absolute top-[10%] right-[10%] w-[18%] aspect-square rounded-full flex items-center justify-center shadow-lg shadow-orange-300/50 z-30 transition-transform duration-500 group-hover:scale-110 min-w-[56px] min-h-[56px]"
               >
-                <span style={{ color: colors.blue }} className="bg-white w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center text-[7px] sm:text-[8px] font-extrabold">
+                <span style={{ color: colors.blue }} className="bg-white w-[70%] aspect-square rounded-full flex items-center justify-center text-[7px] font-extrabold leading-tight">
                   GOVERNMENT
                 </span>
               </div>
 
               <div
                 style={{ backgroundColor: colors.orangePrimary }}
-                className="absolute bottom-[10%] right-[10%] w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center shadow-lg shadow-orange-300/50 z-30 transition-transform duration-500 group-hover:scale-110"
+                className="absolute bottom-[10%] right-[10%] w-[18%] aspect-square rounded-full flex items-center justify-center shadow-lg shadow-orange-300/50 z-30 transition-transform duration-500 group-hover:scale-110 min-w-[56px] min-h-[56px]"
               >
-                <span style={{ color: colors.blue }} className="bg-white w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center text-[8px] sm:text-[9px] font-extrabold">
+                <span style={{ color: colors.blue }} className="bg-white w-[70%] aspect-square rounded-full flex items-center justify-center text-[8px] font-extrabold leading-tight">
                   SCHOOL
                 </span>
               </div>
 
               <div
                 style={{ backgroundColor: colors.orangePrimary }}
-                className="absolute bottom-[10%] left-[10%] w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center shadow-lg shadow-orange-300/50 z-30 transition-transform duration-500 group-hover:scale-110"
+                className="absolute bottom-[10%] left-[10%] w-[18%] aspect-square rounded-full flex items-center justify-center shadow-lg shadow-orange-300/50 z-30 transition-transform duration-500 group-hover:scale-110 min-w-[56px] min-h-[56px]"
               >
                 <span
                   style={{ color: colors.blue }}
-                  className="bg-white w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center text-[7px] sm:text-[8px] font-extrabold text-center leading-tight px-1"
+                  className="bg-white w-[70%] aspect-square rounded-full flex items-center justify-center text-[7px] font-extrabold text-center leading-tight px-0.5"
                 >
                   EXPERT COMMUNITY
                 </span>
               </div>
 
               <div style={{ color: colors.blue }} className="absolute inset-0 z-20">
-                <span className="absolute top-[17%] left-1/2 -translate-x-1/2 font-bold text-[9px] sm:text-xs transition-colors duration-500 group-hover:text-[#F26539]">
+                <span className="absolute top-[17%] left-1/2 -translate-x-1/2 font-bold text-[10px] transition-colors duration-500 group-hover:text-[#F26539]">
                   MENTORING
                 </span>
-                <span className="absolute bottom-[18%] left-1/2 -translate-x-1/2 font-bold text-[9px] sm:text-xs transition-colors duration-500 group-hover:text-[#F26539]">
+                <span className="absolute bottom-[18%] left-1/2 -translate-x-1/2 font-bold text-[10px] transition-colors duration-500 group-hover:text-[#F26539]">
                   ON-JOB-TRAINING
                 </span>
-                <span className="absolute left-[14%] top-1/2 -translate-y-1/2 -rotate-90 origin-center font-bold text-[9px] sm:text-xs transition-colors duration-500 group-hover:text-[#F26539]">
+                <span className="absolute left-[14%] top-1/2 -translate-y-1/2 -rotate-90 origin-center font-bold text-[10px] transition-colors duration-500 group-hover:text-[#F26539]">
                   FAST TRACK
                 </span>
-                <span className="absolute right-[14%] top-1/2 -translate-y-1/2 rotate-90 origin-center font-bold text-[9px] sm:text-xs transition-colors duration-500 group-hover:text-[#F26539]">
+                <span className="absolute right-[14%] top-1/2 -translate-y-1/2 rotate-90 origin-center font-bold text-[10px] transition-colors duration-500 group-hover:text-[#F26539]">
                   HACKATHON
                 </span>
               </div>
 
               <div className="relative z-30 w-full h-full flex items-center justify-center pointer-events-none">
-                {/* ✅ Scale wrapper: kim tự tháp thu nhỏ theo breakpoint */}
-                <div
-                  className="
-                    origin-center transform
-                    scale-[0.52]
-                    sm:scale-[0.72]
-                    md:scale-[0.9]
-                    lg:scale-[0.95]
-                    xl:scale-100
-                    transition-transform duration-300
-                    pointer-events-auto
-                  "
-                >
+                <div className="origin-center transform scale-75 pointer-events-auto">
                   <div
                     className="flex flex-col items-center justify-center -mt-12 pb-8 transition-transform duration-500 group-hover:scale-105"
                     style={{ filter: "drop-shadow(0 4px 6px rgb(0 0 0 / 0.15))" }}

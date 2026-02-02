@@ -1,4 +1,4 @@
-
+import HomeImage from "../assets/Home/1.jpg";
 
 const GetReadyToWork: React.FC = () => {
   return (
@@ -67,7 +67,7 @@ const GetReadyToWork: React.FC = () => {
               <div className="absolute top-4 -right-4 w-full h-full bg-[#274593] rounded-2xl -z-10 opacity-10"></div>
               
               <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                src={HomeImage}
                 alt="Dev Plus Team working together"
                 className="w-full h-auto object-cover rounded-2xl shadow-xl transform hover:scale-[1.02] transition-transform duration-500"
               />

@@ -20,12 +20,14 @@ const CompaniesHero = () => {
           </p>
 
           <button
-            className="
-              inline-flex items-center justify-center
-              px-9 py-2.5 rounded-l-2xl rounded-r-2xl
-              bg-orange-500 text-white font-bold text-sm md:text-base
-              hover:bg-orange-600  transition-all duration-200 ml-38
-            "
+              className="
+                inline-flex items-center justify-center
+                px-7 sm:px-9 py-2.5
+                rounded-2xl
+                bg-orange-500 text-white font-bold text-sm sm:text-base
+                hover:bg-orange-600 transition-all duration-200
+                mx-auto lg:mx-0
+              "
           >
             START A PARTNERSHIP
           </button>
