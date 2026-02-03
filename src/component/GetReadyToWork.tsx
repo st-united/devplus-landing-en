@@ -64,7 +64,6 @@ const GetReadyToWork: React.FC = () => {
 
           <div className='lg:col-span-5 flex justify-center lg:justify-end order-1 lg:order-2'>
             <div className="relative w-full max-w-md lg:max-w-full">
-              <div className="absolute top-4 -right-4 w-full h-full bg-[#274593] rounded-2xl -z-10 opacity-10"></div>
               
               <img
                 src={HomeImage}

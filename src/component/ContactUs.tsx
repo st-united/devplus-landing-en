@@ -1,11 +1,6 @@
-/**
- * Contact Us – section logo, thông tin liên hệ và form gửi tin nhắn.
- *
- * Cách dùng (từ page trong src/Page):
- *   import ContactUs from "../component/ContactUs";
- *   <ContactUs />
- */
-import { useState } from "react";
+
+import { useState, useRef, useEffect } from "react";
+import emailjs from "@emailjs/browser";
 import HorizontalLogo from "../assets/Logo/Horizontal Logo.png";
 
 const colors = {
@@ -74,26 +69,62 @@ const IconLinkedIn = () => (
 );
 
 const ContactUs = () => {
+  const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     question: "",
   });
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+  const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+
+  useEffect(() => {
+    if (publicKey) {
+      emailjs.init(publicKey);
+    }
+  }, [publicKey]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    if (status !== "idle") setStatus("idle");
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!formRef.current || !publicKey || !serviceId || !templateId) {
+      setStatus("error");
+      setErrorMessage(
+        !publicKey || !serviceId || !templateId
+          ? "Chưa cấu hình EmailJS. Kiểm tra file .env."
+          : "Vui lòng thử lại."
+      );
+      return;
+    }
+    setStatus("sending");
+    setErrorMessage("");
+    try {
+      await emailjs.sendForm(serviceId, templateId, formRef.current, {
+        publicKey,
+      });
+      setStatus("success");
+      setFormData({ name: "", email: "", phone: "", question: "" });
+    } catch (err) {
+      setStatus("error");
+      setErrorMessage(err instanceof Error ? err.message : "Gửi tin nhắn thất bại.");
+    }
   };
 
   return (
     <section
+      id="contact-us"
       className="w-full py-14 sm:py-16 lg:py-20"
       style={{ backgroundColor: colors.bg }}
     >
@@ -192,7 +223,7 @@ const ContactUs = () => {
 
           {/* RIGHT COLUMN - Form */}
           <div className="lg:col-span-7">
-            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+            <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-5">
               <h2
                 className="text-xl sm:text-2xl font-bold tracking-tight mb-1"
                 style={{ color: colors.text }}
@@ -259,13 +290,26 @@ const ContactUs = () => {
                 }}
               />
 
+              {(status === "success" || status === "error") && (
+                <p
+                  className="text-sm"
+                  style={{
+                    color: status === "success" ? "#16a34a" : "#dc2626",
+                  }}
+                >
+                  {status === "success"
+                    ? "Tin nhắn đã được gửi thành công."
+                    : errorMessage}
+                </p>
+              )}
               <div className="flex justify-end">
                 <button
                   type="submit"
-                  className="px-6 py-3 rounded-lg text-white font-medium text-sm sm:text-base transition-opacity hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white/50"
+                  disabled={status === "sending"}
+                  className="px-6 py-3 rounded-lg text-white font-medium text-sm sm:text-base transition-opacity hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white/50 disabled:opacity-70 disabled:cursor-not-allowed"
                   style={{ backgroundColor: colors.orange }}
                 >
-                  Send
+                  {status === "sending" ? "Đang gửi..." : "Send"}
                 </button>
               </div>
             </form>

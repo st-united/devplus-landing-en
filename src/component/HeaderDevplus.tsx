@@ -1,6 +1,6 @@
 import { Layout } from 'antd';
 import { useEffect, useRef, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import HorizontalLogo from '../assets/Logo/Horizontal Logo.png';
 
 const { Header } = Layout;
@@ -24,12 +24,15 @@ const productChildren: NavItem[] = [
   { path: '/Products/LMS', label: 'LMS', id: 'ProductLMS' },
 ];
 
+const CONTACT_US_SECTION_ID = 'contact-us';
+
 const HeaderDevplus = ({ activeSection }: { activeSection: string }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [whatWeDoOpen, setWhatWeDoOpen] = useState(false);
   const [productOpen, setProductOpen] = useState(false);
 
   const navigate = useNavigate();
+  const location = useLocation();
   const whatWeDoRef = useRef<HTMLDivElement | null>(null);
   const productRef = useRef<HTMLDivElement | null>(null);
 
@@ -39,6 +42,17 @@ const HeaderDevplus = ({ activeSection }: { activeSection: string }) => {
     setWhatWeDoOpen(false);
     setProductOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleContactUsClick = () => {
+    setMobileMenuOpen(false);
+    setWhatWeDoOpen(false);
+    setProductOpen(false);
+    if (location.pathname === '/') {
+      document.getElementById(CONTACT_US_SECTION_ID)?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate('/#' + CONTACT_US_SECTION_ID);
+    }
   };
 
   const isWhatWeDoActive =
@@ -213,6 +227,8 @@ const HeaderDevplus = ({ activeSection }: { activeSection: string }) => {
 
         <div className="flex items-center gap-3">
           <button
+            type="button"
+            onClick={handleContactUsClick}
             className="
               hidden md:block
               px-4 lg:px-6 xl:px-8 py-2 
@@ -371,6 +387,8 @@ const HeaderDevplus = ({ activeSection }: { activeSection: string }) => {
           <div className="h-px bg-gray-200 my-1"></div>
 
           <button
+            type="button"
+            onClick={handleContactUsClick}
             className="
               w-full px-6 py-3 
               bg-orange-500 text-white text-base font-medium
